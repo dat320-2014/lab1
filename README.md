@@ -1,6 +1,3 @@
-<span>DAT320 Operating Systems</span> <span>1</span> <span>Unix,
-programming tools and C</span> <span>Thuesday Sep 7 2014 18:00</span>
-<span>20</span> <span>Links in this document are clickable.</span>
 
 Introduction
 ============
