@@ -1,3 +1,18 @@
+##Some instructions
+
+Please preserve the structure of this file, as it will be used for partially
+automatic analysis. **Only insert your answers; do not delete anything.** 
+
+Please use [markdown](https://help.github.com/articles/markdown-basics) formating to typeset code and Unix commands with the backtick character, for example, `ls -la`, or if you want to write code blocks, each line should be indented with four spaces, as done in the code below:
+
+    #include <stdio.h>
+    
+    int main(void) {
+    	printf("Hello, world!\n");
+    	return 0;
+    }
+
+
 ##Exercises from the online Unix tutorial
 
 ###Exercise 1a
@@ -93,4 +108,14 @@ Use **ls -l** to check that the permissions have changed.
   - **Answer:** *YOUR ANSWER HERE*
 1. How do you move back one word?
   - **Answer:** *YOUR ANSWER HERE*
+
+
+
+
+
+
+
+
+
+
 
