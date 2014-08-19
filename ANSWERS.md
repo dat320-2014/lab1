@@ -133,11 +133,10 @@ Use `ls -l` to check that the permissions have changed.
 
 ##Library Task
 
-Task: Write the two C files (main.c, l1.c) and prepare the corresponding makefile to compile an executable. You must also make corresponding .h files (l1.h): Make sure that dependencies are handled correctly. The makefile should also contain a ’TEST’ target, where all C files are compiled and tested. You can choose if you want to use specific C files for testing, or if you add test code to the existing files. When executing the ’TEST’ target necessary app’s and lib’s must be built and a test executed. A failing test should fail ’make’.
+Insert your code between the brackets `{}`, remove the comments:
 
-Insert your code below:
-
-    void main( int argc, char *argv[] ) {
+    void main( int argc, char *argv[] )
+	{
       //Make a table of size give by an argument on the command line.
       //Fill the table with random numbers between MIN and MAX
       //MIN = 0.0 if not specified with another value on command line, i.e. optional argument
@@ -146,7 +145,8 @@ Insert your code below:
       //Print out table and sum
     }
     
-	double tab_sort_sum( double *tab, int tab_size ) {
+	double tab_sort_sum( double *tab, int tab_size )
+	{
 	  //Sort the table, return the sum and the sorted table
 	}
 
