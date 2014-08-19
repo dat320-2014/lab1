@@ -1,7 +1,7 @@
 ##Important Instructions
 
 Please preserve the structure of this file, as it will subjected to *partial*
-automatic analysis. **Only insert your answers; do not delete anything.** 
+automatic analysis. **Only insert your answers by replacing the text `YOUR ANSWER HERE`; do not delete anything else.** 
 
 Please use [markdown](https://help.github.com/articles/markdown-basics) formating to typeset code and Unix commands with the backtick character, for example, `ls -la`, or if you want to write code blocks, each line should be indented with four spaces, as done in the code below:
 
