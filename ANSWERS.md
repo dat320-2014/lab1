@@ -64,6 +64,7 @@ Use **ls -l** to check that the permissions have changed.
 1. What command can be used to find the process(es) consuming the most CPU?
 
 **1. Answer:** *YOUR ANSWER HERE*
+
 **1. Answer:** *YOUR ANSWER HERE*
 
 ##vi questions
@@ -76,4 +77,5 @@ Use **ls -l** to check that the permissions have changed.
 1. How do you move back one word?
 
 **1. Answer:** *YOUR ANSWER HERE*
+
 **1. Answer:** *YOUR ANSWER HERE*
