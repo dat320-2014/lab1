@@ -108,7 +108,7 @@ Use `ls -l` to check that the permissions have changed.
 1. How do you move back one word?
   - **Answer:** *YOUR ANSWER HERE*
 
-##The C Language Questions
+##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
   - **Answer:** *YOUR ANSWER HERE*
@@ -128,9 +128,26 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *YOUR ANSWER HERE*
+1. How do you implement an *include guard*, and why is it needed?
+  - **Answer:** *YOUR ANSWER HERE*
 
+##Library Task
 
+Task: Write the two C files (main.c, l1.c) and prepare the corresponding makefile to compile an executable. You must also make corresponding .h files (l1.h): Make sure that dependencies are handled correctly. The makefile should also contain a ’TEST’ target, where all C files are compiled and tested. You can choose if you want to use specific C files for testing, or if you add test code to the existing files. When executing the ’TEST’ target necessary app’s and lib’s must be built and a test executed. A failing test should fail ’make’.
 
+Insert your code below:
 
+    void main( int argc, char *argv[] ) {
+      //Make a table of size give by an argument on the command line.
+      //Fill the table with random numbers between MIN and MAX
+      //MIN = 0.0 if not specified with another value on command line, i.e. optional argument
+      //MAX = 100.0 if not specified with another value on command line, i.e. optional argument
+      //Call tab_sort_sum() in lib1
+      //Print out table and sum
+    }
+    
+	double tab_sort_sum( double *tab, int tab_size ) {
+	  //Sort the table, return the sum and the sorted table
+	}
 
 
