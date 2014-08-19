@@ -49,31 +49,46 @@ Use **ls -l** to check that the permissions have changed.
 ##Shell questions
 
 1. What option with the command "rm" is required to remove a directory`?
+  **Answer:** *YOUR ANSWER HERE*
 1. What is the command used to display the manual pages for any command?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command will show the first 5 lines of an input file?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command can be used to rename a file?
+  **Answer:** *YOUR ANSWER HERE*
 1. What option can we given to "ls" to show the hidden files?
+  **Answer:** *YOUR ANSWER HERE*
 1. What will the command "cat -n file" do?
+  **Answer:** *YOUR ANSWER HERE*
 1. What will the command "echo -n hello" do?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command will display s list of the users who currently logged in in the system?
+  **Answer:** *YOUR ANSWER HERE*
 1. How do you change password on your account?
+  **Answer:** *YOUR ANSWER HERE*
 1. How can you list a file in reverse order?
+  **Answer:** *YOUR ANSWER HERE*
 1. What does the "less" command do?
+  **Answer:** *YOUR ANSWER HERE*
 1. With "less" how do you navigate?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command will display the running processes of the current user?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command can be used to find the process(es) consuming the most CPU?
 
-1. **Answer:** *YOUR ANSWER HERE*
-1. **Answer:** *YOUR ANSWER HERE*
 
 ##vi questions
 1. How do we save a file in \texttt{vi} and continue working?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command/key is used to start entering text?
+  **Answer:** *YOUR ANSWER HERE*
 1. What are the different modes the editor can be in?
+  **Answer:** *YOUR ANSWER HERE*
 1. What command can be used to place the cursor at the beginning of line 4?
+  **Answer:** *YOUR ANSWER HERE*
 1. What will \textit{dd} command do (in command-mode)?
+  **Answer:** *YOUR ANSWER HERE*
 1. How do you undo the most recent changes?
+  **Answer:** *YOUR ANSWER HERE*
 1. How do you move back one word?
 
-1. **Answer:** *YOUR ANSWER HERE*
-1. **Answer:** *YOUR ANSWER HERE*
