@@ -133,21 +133,14 @@ Use `ls -l` to check that the permissions have changed.
 
 ##Library Task
 
-Insert your code between the brackets `{}`, remove the comments:
+Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
 	{
-      //Make a table of size give by an argument on the command line.
-      //Fill the table with random numbers between MIN and MAX
-      //MIN = 0.0 if not specified with another value on command line, i.e. optional argument
-      //MAX = 100.0 if not specified with another value on command line, i.e. optional argument
-      //Call tab_sort_sum() in lib1
-      //Print out table and sum
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
-	  //Sort the table, return the sum and the sorted table
 	}
 
 
