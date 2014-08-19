@@ -1,6 +1,6 @@
 ##Some instructions
 
-Please preserve the structure of this file, as it will be used for partially
+Please preserve the structure of this file, as it will subjected to *partial*
 automatic analysis. **Only insert your answers; do not delete anything.** 
 
 Please use [markdown](https://help.github.com/articles/markdown-basics) formating to typeset code and Unix commands with the backtick character, for example, `ls -la`, or if you want to write code blocks, each line should be indented with four spaces, as done in the code below:
@@ -108,10 +108,26 @@ Use `ls -l` to check that the permissions have changed.
 1. How do you move back one word?
   - **Answer:** *YOUR ANSWER HERE*
 
+##The C Language Questions
 
-
-
-
+1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
+  - **Answer:** *YOUR ANSWER HERE*
+1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
+  - **Answer:** *YOUR ANSWER HERE*
+1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
+  - **Answer:** *YOUR ANSWER HERE*
+1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
+  - **Answer:** *YOUR ANSWER HERE*
+1. What is the content of each of the sections in a *map* file. Explain briefly.
+  - **Answer:** *YOUR ANSWER HERE*
+1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
+  - **Answer:** *YOUR ANSWER HERE*
+1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
+  - **Answer:** *YOUR ANSWER HERE*
+1. How does `make` know if a file must be recompiled?
+  - **Answer:** *YOUR ANSWER HERE*
+1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
+  - **Answer:** *YOUR ANSWER HERE*
 
 
 
