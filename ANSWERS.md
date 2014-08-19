@@ -63,9 +63,8 @@ Use **ls -l** to check that the permissions have changed.
 1. What command will display the running processes of the current user?
 1. What command can be used to find the process(es) consuming the most CPU?
 
-**1. Answer:** *YOUR ANSWER HERE*
-
-**1. Answer:** *YOUR ANSWER HERE*
+1. **Answer:** *YOUR ANSWER HERE*
+1. **Answer:** *YOUR ANSWER HERE*
 
 ##vi questions
 1. How do we save a file in \texttt{vi} and continue working?
@@ -76,6 +75,5 @@ Use **ls -l** to check that the permissions have changed.
 1. How do you undo the most recent changes?
 1. How do you move back one word?
 
-**1. Answer:** *YOUR ANSWER HERE*
-
-**1. Answer:** *YOUR ANSWER HERE*
+1. **Answer:** *YOUR ANSWER HERE*
+1. **Answer:** *YOUR ANSWER HERE*
