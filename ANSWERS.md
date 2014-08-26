@@ -112,8 +112,12 @@ Use `ls -l` to check that the permissions have changed.
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
   - **Answer:** gcc -c hello.c THIS IS THE OBJECT FILE WITH MACHINE CODE, IT IS NOT YET LINKED WITH LIBRARIES AS AN EXECUTABLE
+  - **Answer:** #ifdef DEBUG
+  - 			printf("Debugging\n");
+  - 		#endif
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** CASE 1: gcc -D DEBUG hello.c -o hello
+  - 		CASE 2: You have to change the variable debug to 1 before compiling.
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
