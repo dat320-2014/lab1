@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `mkdir unixstuff/backups`
 
 ###Exercise 1b
 
@@ -27,19 +27,23 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:**      cd backups
+    ls
+    pwd
+    /home/stud/ronnieb/unixstuff/backups
 
 ###Exercise 2a
 
 Create a backup of your `science.txt` file by copying it to a file called `science.bak`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cp science.txt science.bak`
 
 ###Exercise 2b
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:**    mkdir tempstuff
+    rmdir tempstuff 
 
 ###Exercise 3a
 
