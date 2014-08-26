@@ -80,9 +80,9 @@ Use `ls -l` to check that the permissions have changed.
 1. What command will display s list of the users who currently logged in in the system?
   - **Answer:** who | sort
 1. How do you change password on your account?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** passwd
 1. How can you list a file in reverse order?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** -r
 1. What does the `less` command do?
   - **Answer:** Search file for keywords
 1. With `less` how do you navigate?
