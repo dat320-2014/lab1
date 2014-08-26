@@ -52,7 +52,7 @@ Using the above method, create another file called `list2` containing the follow
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *cat list1 list2 | grep p | sort*
 
 ###Exercise 5a
 
@@ -60,34 +60,34 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *chmod a+rw backup , chmod go-rwx science.txt , ls -l*
 
 ##Shell questions
 
 1. What option with the command `rm` is required to remove a directory?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *rmdir "directory"*
 1. What is the command used to display the manual pages for any command?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *man command*
 1. What command will show the first 5 lines of an input file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *head -5 "filename"*
 1. What command can be used to rename a file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *mv (old file) (new file)*
 1. What option can we given to `ls` to show the hidden files?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *ls -a*
 1. What will the command `cat -n file` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *output file content on screen and number every line*
 1. What will the command `echo -n hello` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *not show the result of typing "hello" in the prompt (not show the command not found reply)*
 1. What command will display s list of the users who currently logged in in the system?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *who*
 1. How do you change password on your account?
   - **Answer:** *YOUR ANSWER HERE*
 1. How can you list a file in reverse order?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *tac "file"*
 1. What does the `less` command do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *output content of file on screen one screen at a time*
 1. With `less` how do you navigate?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *space bar to turn page and q to quit*
 1. What command will display the running processes of the current user?
   - **Answer:** *YOUR ANSWER HERE*
 1. What command can be used to find the process(es) consuming the most CPU?
