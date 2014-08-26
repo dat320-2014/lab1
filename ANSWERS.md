@@ -27,7 +27,7 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *pwd , cd.. , ls , cd.. , ls , cd ~*
+**Answer:** *pwd  cd.. , ls , cd.. , ls , cd ~*
 
 ###Exercise 2a
 
@@ -45,7 +45,8 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *cat > list2 , orange, plum, mango, grapefruit , ctrl + d , cat list2*
+*
 
 ###Exercise 3b
 
