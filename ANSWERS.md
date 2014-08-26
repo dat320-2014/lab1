@@ -27,10 +27,13 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** `cd backups`
-    `ls`
-    `pwd`
-    `/home/stud/ronnieb/unixstuff/backups`
+**Answer:** 
+```
+    cd backups
+    ls
+    pwd
+    /home/stud/ronnieb/unixstuff/backups
+```
 
 ###Exercise 2a
 
@@ -42,26 +45,32 @@ Create a backup of your `science.txt` file by copying it to a file called `scien
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:**    `mkdir tempstuff`
-    `rmdir tempstuff` 
+**Answer:**
+```
+    mkdir tempstuff
+    rmdir tempstuff 
+```
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** `cat > list2
-orange
-plum
-mango
-grapefruit
-^D
-cat list2` 
+**Answer:** 
+```
+    cat > list2
+    orange
+    plum
+    mango
+    grapefruit
+    ^D
+    cat list2` 
+```
 
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cat list1 list2 | grep p | sort` 
 
 ###Exercise 5a
 
@@ -69,7 +78,12 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** 
+```
+chmod o-rwx science.txt
+chmod ug+rwx backups
+ls -l
+```
 
 ##Shell questions
 
