@@ -27,10 +27,10 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:**      cd backups
-    ls
-    pwd
-    /home/stud/ronnieb/unixstuff/backups
+**Answer:** `cd backups`
+    `ls`
+    `pwd`
+    `/home/stud/ronnieb/unixstuff/backups`
 
 ###Exercise 2a
 
@@ -42,14 +42,20 @@ Create a backup of your `science.txt` file by copying it to a file called `scien
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:**    mkdir tempstuff
-    rmdir tempstuff 
+**Answer:**    `mkdir tempstuff`
+    `rmdir tempstuff` 
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cat > list2
+orange
+plum
+mango
+grapefruit
+^D
+cat list2` 
 
 ###Exercise 3b
 
