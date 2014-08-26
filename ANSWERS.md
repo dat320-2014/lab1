@@ -81,7 +81,7 @@ Use `ls -l` to check that the permissions have changed.
 1. What command will display s list of the users who currently logged in in the system?
   - **Answer:** *who*
 1. How do you change password on your account?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *passwd*
 1. How can you list a file in reverse order?
   - **Answer:** *tac "file"*
 1. What does the `less` command do?
@@ -89,9 +89,9 @@ Use `ls -l` to check that the permissions have changed.
 1. With `less` how do you navigate?
   - **Answer:** *space bar to turn page and q to quit*
 1. What command will display the running processes of the current user?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *ps*
 1. What command can be used to find the process(es) consuming the most CPU?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *ps -eo pcpu,pid,user,args | sort -k 1 -r | head -6*
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
