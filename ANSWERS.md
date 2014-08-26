@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `~/unixstuff$ mkdir backups`
 
 ###Exercise 1b
 
@@ -27,25 +27,30 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cd backups` `pwd` `cd ..` `ls`
 
 ###Exercise 2a
 
 Create a backup of your `science.txt` file by copying it to a file called `science.bak`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cp -T sci[tab] science.bak`
 
 ###Exercise 2b
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `mkdir tempstuff` `rmdir tem[tab]`
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** `cat > list2
+orange
+plum
+mango
+grapefruit
+^D`
 
 ###Exercise 3b
 
