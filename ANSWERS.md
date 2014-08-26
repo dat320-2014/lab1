@@ -80,17 +80,17 @@ Use `ls -l` to check that the permissions have changed.
 1. What will the command `cat -n file` do?
   - **Answer:** It gives each line a number, at the start. And prints the text.
 1. What will the command `echo -n hello` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** echo is the command to display something on the command line. The -n part stops it from printing.
 1. What command will display s list of the users who currently logged in in the system?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `who`
 1. How do you change password on your account?
   - **Answer:** *YOUR ANSWER HERE*
 1. How can you list a file in reverse order?
   - **Answer:** *YOUR ANSWER HERE*
 1. What does the `less` command do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** It prints a file one screen at a time. Press space to go to the next screen in the file.
 1. With `less` how do you navigate?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** space
 1. What command will display the running processes of the current user?
   - **Answer:** *YOUR ANSWER HERE*
 1. What command can be used to find the process(es) consuming the most CPU?
