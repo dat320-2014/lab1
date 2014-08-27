@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`mkdir backups`*
 
 ###Exercise 1b
 
@@ -27,31 +27,37 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`cd leif; cd dev; pwd; ls -a;`*
 
 ###Exercise 2a
 
 Create a backup of your `science.txt` file by copying it to a file called `science.bak`
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`cp /vol/examples/tutorial/science.txt /unixstuff/backups/science.bak`*
 
 ###Exercise 2b
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`mkdir tempstuff; rmdir tempstuff;`*
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`cat > list2
+orange
+plum
+mango
+grapefruit
+^D;
+cat list2`*
 
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`cat list1 list2 | grep p | sort`*
 
 ###Exercise 5a
 
@@ -59,77 +65,100 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`chmod a+wx science.txt; chmod g-wx backups`*
 
 ##Shell questions
 
 1. What option with the command `rm` is required to remove a directory?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`rmdir example`*
 1. What is the command used to display the manual pages for any command?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`man example`*
 1. What command will show the first 5 lines of an input file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`head -5 example.txt`*
 1. What command can be used to rename a file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`mv oldfile newfile`*
 1. What option can we given to `ls` to show the hidden files?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`ls -a`*
 1. What will the command `cat -n file` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Number all output lines*
 1. What will the command `echo -n hello` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *do not output the trailing newline*
 1. What command will display s list of the users who currently logged in in the system?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`who`*
 1. How do you change password on your account?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`passwd`*
 1. How can you list a file in reverse order?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`tail -r example.txt`*
 1. What does the `less` command do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Display a file one page at a time*
 1. With `less` how do you navigate?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *By searching or scrolling*
 1. What command will display the running processes of the current user?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`jobs`*
 1. What command can be used to find the process(es) consuming the most CPU?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`ps`*
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`[Esc] :w [enter]`*
 1. What command/key is used to start entering text?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`i`*
 1. What are the different modes the editor can be in?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Vi, command and input mode*
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`:4`*
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Delete the line the cursor points to*
 1. How do you undo the most recent changes?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`u`*
 1. How do you move back one word?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`b`*
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`gcc -g -O -c hello.c` *
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *By using the flag: `-g`*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+  Listing2:
+  Pros: Debug options automaticly set at compile Cons: 
+  Listing3:
+  Pros: Can set debug without having to set the flag Cons: Debug not automaticly set
+  *
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`gcc -o hello -Wl,-Map=hello.map  The linker produces the map file*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *The map file contains information regarding the decisions of ld during linking
+  The file contains far too many sections to summarize in this file, but the most general being:
+  Data:
+  Bss: Contains staticly allocated variables
+  Heap:
+  Stack:
+  
+  
+  *
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** *YOUR ANSWER HERE*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *The assembly instructions `push,mov,sub,fld,fmul,leave,ret` are used in this function
+  There was far less `mov` instructions needed to execute the float version of multiply because it uses a smaller datatype*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *The make tool checks the time and date of the file to determine if it needs to be recompiled*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+  
+  You implement the include guard with special pragma functions
+  
+  #ifndef EXAMPLE_H
+  #define EXAMPLE_H
+	// code
+  #endif 
+  
+  The include guard is needed to avoid multiple inclusion problems*
 
 ##Library Task
 
