@@ -27,7 +27,7 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *
+**Answer:**
 ```
 $ mkdir -p unixstuff/backups
 $ cd unixstuff
@@ -38,7 +38,6 @@ $ cd ../../
 $ pwd
 /home/ragnvald/labs/lab1
 ```
-*
 
 ###Exercise 2a
 
