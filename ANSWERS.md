@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *"mkdir backups"*
+**Answer:** *`mkdir backups`*
 
 ###Exercise 1b
 
@@ -27,38 +27,39 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *YOUR ANSWER HERE*
+**Answer:** *`cd` changes directory `ls` lists the directory structure `pwd` show you current working directory*
 
 ###Exercise 2a
 
 Create a backup of your `science.txt` file by copying it to a file called `science.bak`
 
-**Answer:** *cp science.txt science.bak*
+**Answer:** *`cp science.txt science.bak`*
 
 ###Exercise 2b
 
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
-**Answer:** *mkdir tempstuff. rmdir tempstuff/*
+**Answer:** *`mkdir tempstuff. rmdir tempstuff/`*
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *cat > list2
+**Answer:** *
+`cat > list2
 orange
 plum
 mango
 grapefruit
 ^D
 
-cat list2*
+cat list2`*
 
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
 
-**Answer:** *cat list1 list2 | grep p | sort*
+**Answer:** *`cat list1 list2 | grep p | sort`*
 
 ###Exercise 5a
 
@@ -66,65 +67,65 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *YOUR ANSWER HERE*
-
+**Answer:** *`chmod -w science.txt` remove write access.`chmod +w science.txt` enabled write access. `chmod -rw backups/` made the Os print out a warning when deleting the directory.*
+	
 ##Shell questions
 
 1. What option with the command `rm` is required to remove a directory?
-  - **Answer:** *"rm -r [directory_name]" will remove a directory*
+  - **Answer:** *`rm -r [directory_name]` will remove a directory*
 1. What is the command used to display the manual pages for any command?
-  - **Answer:** *the command "man [progam]" will show the manual page for your desired program*
+  - **Answer:** *the command `man [progam]` will show the manual page for your desired program*
 1. What command will show the first 5 lines of an input file?
-  - **Answer:** *"head -n 5 [filename]" will show the first 5 lines of a specified file*
+  - **Answer:** *`head -n 5 [filename]` will show the first 5 lines of a specified file*
 1. What command can be used to rename a file?
-  - **Answer:** *You may use the command "mv [file] [new_name]" to rename a file*
+  - **Answer:** *You may use the command `mv [file] [new_name]` to rename a file*
 1. What option can we given to `ls` to show the hidden files?
-  - **Answer:** *"ls -a"*
+  - **Answer:** *`ls -a`*
 1. What will the command `cat -n file` do?
   - **Answer:** *The command will number the lines that are printed*
 1. What will the command `echo -n hello` do?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`echo -n hello` will print hello to the screen but make the cursor stay on the same line.*
 1. What command will display s list of the users who currently logged in in the system?
-  - **Answer:** *the command "w" will list all users logged in to the system*
+  - **Answer:** *the command `who` will list all users logged in to the system*
 1. How do you change password on your account?
-  - **Answer:** *You can change the password using the command "passwd [username]"*
+  - **Answer:** *You can change the password using the command `passwd [username]`*
 1. How can you list a file in reverse order?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *To list a file in reverse order you may use the `tac` command which is also `cat` spelled backwards*
 1. What does the `less` command do?
-  - **Answer:** *the command "less" prints a file one page at a time*
+  - **Answer:** *the command `less` prints a file one page at a time*
 1. With `less` how do you navigate?
-  - **Answer:** *You can navigate "less" using the pageUp and pageDown keys. Also pressing space will take you to the next page.*
+  - **Answer:** *You can navigate `less` using the pageUp and pageDown keys. Also pressing space will take you to the next page.*
 1. What command will display the running processes of the current user?
-  - **Answer:** *the command "top -u [username]" will display the processes for the user*
+  - **Answer:** *the command `top -u [username]` will display the processes for the user*
 1. What command can be used to find the process(es) consuming the most CPU?
-  - **Answer:** *Running the program "top" with no parameters will print the running processes with the most intensive on the top of the list*
+  - **Answer:** *Running the program `top` with no parameters will print the running processes with the most intensive on the top of the list*
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *You can save a file and continue working by entering :w [filename] in the command mode*
+  - **Answer:** *You can save a file and continue working by entering `:w [filename]` in the command mode*
 1. What command/key is used to start entering text?
-  - **Answer:** *Pressing the "i" button *
+  - **Answer:** *Pressing the `i` button *
 1. What are the different modes the editor can be in?
-  - **Answer:** *The editor includes two modes. "Command" and "Input mode"*
+  - **Answer:** *The editor includes two modes. `Command` and `Input Mode`*
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *Typing :4 in command mode will take your cursor to line 4*
+  - **Answer:** *Typing `:4` in command mode will take your cursor to line 4*
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** *Typing "dd" in command mode will delete the line your cursor hovers over*
+  - **Answer:** *Typing `dd` in command mode will delete the line your cursor hovers over*
 1. How do you undo the most recent changes?
-  - **Answer:** *You can undo your recent by typing "u" in Command Mode*
+  - **Answer:** *You can undo your recent by typing `u` in Command Mode*
 1. How do you move back one word?
-  - **Answer:** *Pressing "b" in Command Mode will take you back one word at a time*
+  - **Answer:** *Pressing `b` in Command Mode will take you back one word at a time*
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *By typing "gcc -c [source.c]" you will get only the ".o" file. This way gcc will only compile your source and not link it to create an executable.*
+  - **Answer:** *By typing `gcc -c [source.c]` you will get only the `.o` file. This way gcc will only compile your source and not link it to create an executable.*
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *To compile you program with debug enabled in case 1: use gcc with the flag `- DDEBUG`. In case two: *
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *In order to generate a map file use the command `gcc -o [executable] -Wl,-Map,[desired.map] [source.c]` `ld` the linker in gcc is responsible for producing the map file*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *YOUR ANSWER HERE*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
@@ -132,11 +133,18 @@ Use `ls -l` to check that the permissions have changed.
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *YOUR ANSWER HERE*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Make checks the timestamp of the executable. If it is older than the source file required to make it, one can asume it is outdated and needs to be recompiled in order to update the executable.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *And include guard is needed so that headers are not included more than once. If they are you will end up defining functions multiple times and you program may not compile. An include header is added by using the preprocessor:
+  `#ifndef header.h
+   #define header.h
+   
+   ..code contents..
+   
+   #endif
+   `*
 
 ##Library Task
 
