@@ -27,16 +27,16 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** *
-    $ mkdir -p unixstuff/backups
-    $ cd unixstuff
-    $ ls
-    backups
-    $ ls
-    $ cd ../../
-    $ pwd
-    /home/ragnvald/labs/lab1
-*
+**Answer:** *```
+$ mkdir -p unixstuff/backups
+$ cd unixstuff
+$ ls
+backups
+$ ls
+$ cd ../../
+$ pwd
+/home/ragnvald/labs/lab1
+``` *
 
 ###Exercise 2a
 
