@@ -98,19 +98,19 @@ Use `ls -l` to check that the permissions have changed.
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** we first go to COMMAND mode. Here we type and return `:w list2`  forinstance, this will save the file as "list2"
 1. What command/key is used to start entering text?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `i` this enables INSERT mode
 1. What are the different modes the editor can be in?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** INSERT and COMMAND
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `:4`
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** It will delete the entire line where the cursor is located.
 1. How do you undo the most recent changes?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `u`  this is the undo command
 1. How do you move back one word?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `b`
 
 ##The C Language and Make tool Questions
 
