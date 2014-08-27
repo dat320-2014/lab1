@@ -128,7 +128,7 @@ Use `ls -l` to check that the permissions have changed.
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *
   Listing2:
-  Pros: Debug options automaticly set at compile Cons: 
+  Pros: Debug options automaticly set at compile Cons: Debug can not be set programmaticly
   Listing3:
   Pros: Can set debug programmaticly Cons: Debug not automaticly set
   *
@@ -145,7 +145,7 @@ Use `ls -l` to check that the permissions have changed.
   ```
   *
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *The assembly instructions `push,mov,sub,fld,fmul,leave,ret` are used in this function
+  - **Answer:** *The assembly instructions `push, mov, sub, fld, fmul, leave, ret` are used in this function
   There was far less `mov` instructions needed to execute the float version of multiply because it uses a smaller datatype*
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *The make tool checks the time and date of the file to determine if it needs to be recompiled*
