@@ -130,20 +130,12 @@ Use `ls -l` to check that the permissions have changed.
   Listing2:
   Pros: Debug options automaticly set at compile Cons: 
   Listing3:
-  Pros: Can set debug without having to set the flag Cons: Debug not automaticly set
+  Pros: Can set debug programmaticly Cons: Debug not automaticly set
   *
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *`gcc -o hello -Wl,-Map=hello.map  The linker produces the map file*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *The map file contains information regarding the decisions of ld during linking
-  The file contains far too many sections to summarize in this file, but the most general being:
-  Data:
-  Bss: Contains staticly allocated variables
-  Heap:
-  Stack:
-  
-  
-  *
+  - **Answer:** *The map file contains information regarding the decisions of ld during linking*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** *YOUR ANSWER HERE*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
@@ -158,11 +150,12 @@ Use `ls -l` to check that the permissions have changed.
   
   You implement the include guard with special pragma functions
   
+  ```
   #ifndef EXAMPLE_H
   #define EXAMPLE_H
 	// code
   #endif 
-  
+  ```
   The include guard is needed to avoid multiple inclusion problems*
 
 ##Library Task
