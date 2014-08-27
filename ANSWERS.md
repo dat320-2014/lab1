@@ -33,6 +33,7 @@ $ mkdir -p unixstuff/backups
 $ cd unixstuff
 $ ls
 backups
+$ cd backups
 $ ls
 $ cd ../../
 $ pwd
@@ -55,24 +56,25 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *
-    $ cat > list2
-    orange
-    plum
-    mango
-    grapefruit
-    $ cat list2
-    orange
-    plum
-    mango
-    grapefruit
-*
+**Answer:**
+``` 
+$ cat > list2
+orange
+plum
+mango
+grapefruit
+$ cat list2
+orange
+plum
+mango
+grapefruit
+```
 
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
 
-**Answer:** *cat list1 list2|sort*
+**Answer:** *cat list1 list2|grep p|sort*
 
 ###Exercise 5a
 
@@ -80,17 +82,18 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *
-    $ chmod 700 unixstuff/backups/
-    $ chmod 600 science.txt
-    $ ls -la science.txt unixstuff/backups/
-    -rw------- 1 ragnvald ragnvald    0 Aug 27 15:45 science.txt
+**Answer:**
+```
+$ chmod 700 unixstuff/backups/
+$ chmod 600 science.txt
+$ ls -la science.txt unixstuff/backups/
+-rw------- 1 ragnvald ragnvald    0 Aug 27 15:45 science.txt
 
-    unixstuff/backups/:
-    total 8
-    drwx------ 2 ragnvald ragnvald 4096 Aug 27 15:23 .
-    drwxr-xr-x 3 ragnvald ragnvald 4096 Aug 27 15:23 ..
-*
+unixstuff/backups/:
+total 8
+drwx------ 2 ragnvald ragnvald 4096 Aug 27 15:23 .
+drwxr-xr-x 3 ragnvald ragnvald 4096 Aug 27 15:23 ..
+```
 
 ##Shell questions
 
