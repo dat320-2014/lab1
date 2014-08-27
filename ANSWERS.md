@@ -137,7 +137,13 @@ Use `ls -l` to check that the permissions have changed.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *The map file contains information regarding the decisions of ld during linking*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+  ```
+  int datavar = 42;
+  int bssvar;
+  static const float rodatavar = 3.14159f;
+  ```
+  *
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *The assembly instructions `push,mov,sub,fld,fmul,leave,ret` are used in this function
   There was far less `mov` instructions needed to execute the float version of multiply because it uses a smaller datatype*
