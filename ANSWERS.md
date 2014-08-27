@@ -84,17 +84,17 @@ Use `ls -l` to check that the permissions have changed.
 1. What command will display s list of the users who currently logged in in the system?
   - **Answer:** `who`
 1. How do you change password on your account?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** First you have to SSH onto either Johanna 2 or 10. From there you issue the command `passwd`. The system will prompt you for the old password and your new password.
 1. How can you list a file in reverse order?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `cat`
 1. What does the `less` command do?
   - **Answer:** It prints a file one screen at a time. Press space to go to the next screen in the file.
 1. With `less` how do you navigate?
   - **Answer:** space
 1. What command will display the running processes of the current user?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `ps`
 1. What command can be used to find the process(es) consuming the most CPU?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `top`
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
