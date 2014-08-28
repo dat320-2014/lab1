@@ -141,7 +141,7 @@ ls -l
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *In Listing 2 we use a preprocessor directive. This means that if we use the option `-D DEBUG` on gcc, the text within the `#IFDEF` will be copied into the sourcefile. So during our final release we can omit this code, which gives us a smaller size on the executable. In Listing 2 the code will always be there unless we go into each sourcefile and manually remove that code.*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`gcc -Xlinker -Map=hello.map -o hello.c` This command produces both the map and the executable. The linker (ld) is responsible for creating the map file.*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *YOUR ANSWER HERE*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
