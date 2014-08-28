@@ -137,7 +137,7 @@ ls -l
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
   - **Answer:** The `-c` option tells gcc not to run the linker. The source code file is only compiled to machine language (.o-file), it is not linked. So the .o-files are not executable. 
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *`gcc -DDEBUG file.c -o file` In Listing 2 you have to compile with the -DDEBUG option on gcc. For Listing 3 you dont need -DDEBUG option, you just have to change the debug variable to 1.*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
