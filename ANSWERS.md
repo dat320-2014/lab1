@@ -139,7 +139,7 @@ ls -l
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *`gcc -DDEBUG file.c -o file` In Listing 2 you have to compile with the -DDEBUG option on gcc. For Listing 3 you dont need -DDEBUG option, you just have to change the debug variable to 1.*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *In Listing 2 we use a preprocessor directive. This means that if we use the option `-D DEBUG` on gcc, the text within the `#IFDEF` will be copied into the sourcefile. So during our final release we can omit this code, which gives us a smaller size on the executable. In Listing 2 the code will always be there unless we go into each sourcefile and manually remove that code.*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *YOUR ANSWER HERE*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
