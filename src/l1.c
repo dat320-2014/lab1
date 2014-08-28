@@ -1,37 +1,42 @@
 #include <stdio.h>
-#include "l1.h"
 #include <stdlib.h>
 
 double tab_sort_sum(double *tab, int tab_size){
-   // A version of bubble sort
 
-   int swapped = 1;
-   int idx;
-   int big, small;
-   double *table = tab;
-   double sum;
-   while(swapped == 0){
-   for(idx = 1;idx < tab_size;idx ++){
-   	if(table[idx -1] > table[idx]){
-	  big = table[idx - 1];
-	  small = table[idx];
-	  table[idx] = big;
-	  table[idx-1] = small;
-	  swapped = 1;
-	 }else{
-	 swapped = 0;
-    	}
-    }
-}
+/* Bubble sort code */
+ 
+  int i, j;
+  double sum, swap;
+  double array[tab_size];
+  for(i = 0; i < tab_size; i++){
+  	array[i] = tab[i];
+  }
 
-    for(idx = 0; idx < tab_size; idx ++){
-    	sum += table[idx];
+  int array_size = tab_size;
+     
+  for (i = 0 ; i < ( (array_size - 1 )); i++)
+  {
+    for (j = 0 ; j < array_size - i - 1; j++)
+    {
+      if (array[j] > array[j+1]) /* For decreasing order use < */
+      {
+        swap       = array[j];
+        array[j]   = array[j+1];
+        array[j+1] = swap;
+      }
     }
-    for(idx = 0; idx < tab_size; idx ++){
-    	printf("%f ", table[idx]);
-    }
+  }
+ 
+	//Create the sum
+	for(i = 0; i < tab_size; i++){
+		sum += array[i];
+	}
+	// Print the Table
+	for(i = 0; i < tab_size;i++){
+		printf("%f, ", array[i]);
+	}
+return sum;
 
-    return sum;
 }
 
     
