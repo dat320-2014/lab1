@@ -144,18 +144,27 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** `gcc hello.c -c hello`
 		You cannot execute an .o file, and the compiler has not yet linked to the libraries.
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** Listing 1 you use the command `gcc hello.c -D DEBUG` to compile it in debug mode(you will get an exe named 		a.out), whilst if you issue `gcc hello.c -o hello` you will not.
-		Listing 2 will require you to change the variable in the hello.c file before you compile.
+  - **Answer:** Listing 2 you use the command `gcc hello.c -D DEBUG` to compile it in debug mode(you will get an exe named 		a.out), whilst if you issue `gcc hello.c -o hello` you will not.
+		Listing 3 will require you to change the variable in the hello.c file before you compile. You enable 				debugging by writing `gcc hello.c -D hello`
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** Listing 2 Pros: Can be easily set in Debug mode at compile. Cons: Debug cannot be set progammaticly
+		Listing 3 Pros: Can be set automatically. Cons: Cannot be set at compile.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `gcc hello.c -o hello -Wl,Map=hello.map` The linker tool is responsible for producing the *map* file.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** A link map provides information about the link, including the following:
+		Where object files are mapped into memory. How common symbols are allocated. All archive members included 		in the link, with a mention of the symbol which caused the archive member to be brought in.
+		The values assigned to symbols.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** ```
+		int datavar = 13;
+		int bssvar;
+		static const float rodatavar = 13.37;
+		```
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** For the double it uses `push, movsd, mulsd, leave and ret`
+		For the float it uses `push, movss, mulss, leave and ret`	
+		difference is that is uses different mov and mul instructions, because 		    	of the difference in the data type of the functions.	
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
