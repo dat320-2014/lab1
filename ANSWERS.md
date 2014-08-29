@@ -63,7 +63,7 @@ Using the above method, create another file called `list2` containing the follow
     mango
     grapefruit
     ^D
-    cat list2` 
+    cat list2 
 
 
 ###Exercise 3b
@@ -80,9 +80,9 @@ Use `ls -l` to check that the permissions have changed.
 
 **Answer:** 
 
-chmod o-rwx science.txt
-chmod ug+rwx backups
-ls -l
+    chmod o-rwx science.txt
+    chmod ug+rwx backups
+    ls -l
 
 
 ##Shell questions
@@ -118,19 +118,19 @@ ls -l
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *Enter command mode, then `:w` * 
+  - **Answer:** *Enter command mode, then* `:w`  
 1. What command/key is used to start entering text?
-  - **Answer:** *From command mode: `i` (insert)*
+  - **Answer:** *From command mode:* `i` *(insert)*
 1. What are the different modes the editor can be in?
   - **Answer:** *Command mode, Insert mode, Replace mode* 
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *In command mode, type `:4` *
+  - **Answer:** *In command mode, type* `:4` 
 1. What will `dd` command do (in command-mode)?
   - **Answer:** *Moves current line to buffer (deletes it).*
 1. How do you undo the most recent changes?
-  - **Answer:** * `u` from command mode*
+  - **Answer:**  `u` *from command mode*
 1. How do you move back one word?
-  - **Answer:** * `b` (small b) from command mode.*
+  - **Answer:**  `b` *(small b) from command mode.*
 
 ##The C Language and Make tool Questions
 
@@ -195,21 +195,20 @@ multiply:
 
 ```
 *In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*
-
-8. How does `make` know if a file must be recompiled?
+1. How does `make` know if a file must be recompiled?
   - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *An include guard is needed to prevent double inclusions. If two .c-files includes the same .h-file this can cause compilation errors. For example you can end up with two equal function definitions if you forget include guards. Heres an example of an include guard, this can be put in a header-file:*
-
+```
     #ifndef _HEADER_H_
     #define _HEADER_H_
 
     /* Code here */
 
     #endif // #ifndef _HEADER_H_
-
+```
 ##Library Task
 
 Insert your code between the brackets `{}`:
