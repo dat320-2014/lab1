@@ -46,14 +46,14 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
 **Answer:** *
-`cat > list2
-orange
-plum
-mango
-grapefruit
-^D
+    `cat > list2
+    orange
+    plum
+    mango
+    grapefruit
+    ^D
 
-cat list2`*
+    cat list2`*
 
 ###Exercise 3b
 
@@ -123,28 +123,71 @@ Use `ls -l` to check that the permissions have changed.
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *To compile you program with debug enabled in case 1: use gcc with the flag `- DDEBUG`. In case two: *
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:**In Listing 2 debugging is activated by compiling with the macro `DEBUG`. In my opinion it seems like a simple and convenient method to activate debugging, mainly because it does not require you to modify the source code. In Listing 3 debugging is enabled by setting a variable. In this case you will have to modify the c file(s) to enable debugging which may become difficult as you have to trace the appropriate variables. In my opinion it also makes the code harder to read because on first sight it may seem like a "normal" part of the code.**
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *In order to generate a map file use the command `gcc -o [executable] -Wl,-Map,[desired.map] [source.c]` `ld` the linker in gcc is responsible for producing the map file*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *The .map file include a list over program entrypoints and which libraries/object files the linker uses.*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+    '
+    #include <stdio.h>
+
+    float multiply(float x1, float x2){
+       return x1*x2;
+    }
+
+    int main(void){
+       int integer;
+       char character;
+       short shortvar;
+       float floating;
+
+       printf("Hello, World!\n");
+
+       printf("%.3f\n", multiply(3.2,4.0));
+
+    return 0;
+
+    }
+    '
+    *
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+    multiply:
+    .LFB0:
+	    .cfi_startproc
+	    pushq	%rbp
+	    .cfi_def_cfa_offset 16
+	    .cfi_offset 6, -16
+	    movq	%rsp, %rbp
+	    .cfi_def_cfa_register 6
+	    movsd	%xmm0, -8(%rbp)
+	    movsd	%xmm1, -16(%rbp)
+	    movsd	-8(%rbp), %xmm0
+	    mulsd	-16(%rbp), %xmm0
+	    popq	%rbp
+	    .cfi_def_cfa 7, 8
+	    ret
+	    .cfi_endproc
+    
+    The `mulsd` Instruction performing the multiplication. When using the float type, it uses the `mulss` insturction.
+
+    *
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *Make checks the timestamp of the executable. If it is older than the source file required to make it, one can asume it is outdated and needs to be recompiled in order to update the executable.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *And include guard is needed so that headers are not included more than once. If they are you will end up defining functions multiple times and you program may not compile. An include header is added by using the preprocessor:
-  `#ifndef header.h
-   #define header.h
+    `
+    #ifndef header.h
+    #define header.h
    
-   ..code contents..
+    ..code contents..
    
-   #endif
-   `*
+    #endif
+    `*
 
 ##Library Task
 

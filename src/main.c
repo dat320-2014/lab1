@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
 {
 	int tableSize;
 	//Default Values	
-	double min = 0;
-	double max = 100;
+	double min;
+	double max;
 
 	if(argc == 1){
 		printf("Error: You need to specify Array Size\n");
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	double table[tableSize];
 	if(argc >= 3){
 		min = atof(argv[2]);
-		printf("HELLOOOAOODOWDOAOWDE921823912316212616926912639");
+		
 	}else{
 		min = 0.0;
 	}
@@ -45,7 +45,6 @@ int main(int argc, char *argv[])
 	sclk();			// Seeds the timer
 	int i;
 	for(i = 0; i < tableSize;i++){
-		//table[i] = min + rand() % max;
 		table[i] = randDouble(min,max);
 	}
 
