@@ -152,10 +152,90 @@ Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
 	{
+    	int tableSize;
+	
+	double min;
+	double max;
+
+	if(argc == 1){
+		printf("Error: You need to specify Array Size\n");
+		printf("Usage: main [size] [min] [max]\n");
+		return -1;
+	}else{
+		tableSize = atoi(argv[1]);
+	}
+	
+	double table[tableSize];
+	
+	if(argc >= 3){
+		min = atof(argv[2]);
+	}else{
+		min = 0.0;
+	}
+	if(argc >= 4){
+		max = atof(argv[3]);
+	}else{
+		max = 100.0;
+	}
+	
+	
+	sclk();			// Seeds the timer
+	int i;
+	for(i = 0; i < tableSize;i++){
+		//table[i] = min + rand() % max;
+		table[i] = randDouble(min,max);
+	}
+
+	printf("\nHere is our table:\n");
+	for(i = 0; i < sizeof(table)/sizeof(double);i++){
+		printf("%.2f, ",table[i]);
+	}
+
+	printf("\n\nSorted table:\n");
+   
+	double sum = tab_sort_sum(table,tableSize);
+
+	printf("\n\n**Sum of table: %.2f**\n\n", sum);
+	
+    return 0;
+	
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
-	}
+	    int i, j;
+  	    double sum, swap;
+  	    double array[tab_size];
+  	    
+	    for(i = 0; i < tab_size; i++){
+  	       array[i] = tab[i];
+  	    }
+
+  	    int array_size = tab_size;
+     
+  	    for (i = 0 ; i < ( (array_size - 1 )); i++)
+  	    {
+    	        for (j = 0 ; j < array_size - i - 1; j++)
+    		{		
+      		    if (array[j] > array[j+1]) /* For decreasing order use < */
+      	            {
+       		        swap       = array[j];
+        	        array[j]   = array[j+1];
+        	        array[j+1] = swap;
+      		    }
+    		}
+  	    }
+ 
+	    //Create the sum
+	    for(i = 0; i < tab_size; i++){
+	        sum += array[i];
+	    }
+	    // Print the Table
+	    for(i = 0; i < tab_size;i++){
+	        printf("%.2f, ", array[i]);
+	    }
+            return sum;
+
+    }
 
 

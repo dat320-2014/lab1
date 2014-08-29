@@ -3,8 +3,6 @@
 
 double tab_sort_sum(double *tab, int tab_size){
 
-/* Bubble sort code */
- 
   int i, j;
   double sum, swap;
   double array[tab_size];
