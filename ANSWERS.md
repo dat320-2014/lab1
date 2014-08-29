@@ -196,9 +196,9 @@ multiply:
 ```
 *In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*  
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*  
+  - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *`make -f mymakefile`*  
+  - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *An include guard is needed to prevent double inclusions. If two .c-files includes the same .h-file this can cause compilation errors. For example you can end up with two equal function definitions if you forget include guards. Heres an example of an include guard, this can be put in a header-file:*
 ```c
