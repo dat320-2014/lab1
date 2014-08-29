@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** `mkdir unixstuff/backups`
+**Answer:** *`mkdir unixstuff/backups`*
 
 ###Exercise 1b
 
@@ -28,12 +28,12 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
 **Answer:** 
-```
+
     cd backups
     ls
     pwd
     /home/stud/ronnieb/unixstuff/backups
-```
+
 
 ###Exercise 2a
 
