@@ -157,7 +157,7 @@ Use `ls -l` to check that the permissions have changed.
     
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *
-
+	```
         multiply:
         .LFB0:
 	        .cfi_startproc
@@ -174,24 +174,26 @@ Use `ls -l` to check that the permissions have changed.
 	        .cfi_def_cfa 7, 8
 	        ret
 	        .cfi_endproc
-    
+         ```
 The `mulsd` Instruction performing the multiplication. When using the float type, it uses the `mulss` insturction.
 
 *
+
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *Make checks the timestamp of the executable. If it is older than the source file required to make it, one can asume it is outdated and needs to be recompiled in order to update the executable.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *And include guard is needed so that headers are not included more than once. If they are you will end up defining functions multiple times and you program may not compile. An include header is added by using the preprocessor:
-    `
+    ```
     #ifndef header.h
     #define header.h
    
     ..code contents..
    
     #endif
-    `*
+    ```
+*
 
 ##Library Task
 
