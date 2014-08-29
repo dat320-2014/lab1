@@ -194,7 +194,7 @@ multiply:
 	.section	.note.GNU-stack,"",@progbits
 
 ```
-*In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*
+*In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*  
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
