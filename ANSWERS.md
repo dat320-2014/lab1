@@ -46,14 +46,15 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
 **Answer:**
-    `cat > list2`
-    `orange`
-    `plum`
-    `mango`
-    `grapefruit`
-    `^D`
-    `cat list2`
-
+```
+cat > list2
+orange
+plum
+mango
+grapefruit
+^D
+cat list2
+```
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
@@ -130,9 +131,11 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** The map shows address resolutions, .data, .code, etc sections size and position, archive members included and allocated symbols and their assigned value.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:**
-    const char debug_cmt[] = "Some smart debugcomment\n";
-    const char hello[]     = "Hello world!\n";
-    const int  retval      = 0;
+```
+const char debug_cmt[] = "Some smart debugcomment\n";
+const char hello[]     = "Hello world!\n";
+const int  retval      = 0;
+```
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** `gcc -O -S dmult.c` (took the liberty of optimizing)
   Examining dmult.s & fmult.s: `mulsd    %xmm1, %xmm0` scalar double as opposed to `mulss    %xmm1, %xmm0` scalar single mult. instruction. Single (float) operates on half the bit-size of double. It is thus curious how gcc chooses to use the 128bit XMM registers on both accounts.
@@ -142,82 +145,86 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** `make -f mymakefile`
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** Include guards prevent common libraries and headers being imported several times. It looks like this:
-    #ifndef IVEBEENHEREBEFORE
-    #define IVEBEENHEREBEFORE
-    // do header stuff
-    #endif
-
+```
+#ifndef IVEBEENHEREBEFORE
+#define IVEBEENHEREBEFORE
+// do header stuff
+#endif
+```
 ##Library Task
 
 Insert your code between the brackets `{}`:
 
 **main.c:**
-    #include <stdio.h>
-    #include <time.h>
-    #include <stdlib.h>
-    #include <limits.h>
-    #include "l1.h"
-    
-    void main( int argc, char *argv[] )
-    {
-	int
-	  size = 4,
-          min = 0,
-	  max = 100,
-          range = max - min,
-          table[size][size];
-        srand( time( NULL )); // seed random generator
-        for ( int i = size; i >= 0; i-- )
-	{
-	    for ( int j = size; j >= 0; j-- )
-            {
-		table[i][j] = rand_in_range( min, range );
-            }
-	}
+```
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <limits.h>
+#include "l1.h"
 
-        double sum = tab_sort_sum( ptable, size );
-	
-	int cell_width = 10; // log_2( max ) + 1
-	char *format[6];
-	sprintf( format, '%%%dd', cell_width ); // e.g. '%10d'
-	char *line[size * cell_width + 1];
-	
-	for ( i = 0; i < size; i++ ) // each row
+void main( int argc, char *argv[] )
+{
+    int
+      size = 4,
+      min = 0,
+      max = 100,
+      range = max - min,
+      table[size][size];
+    srand( time( NULL )); // seed random generator
+    for ( int i = size; i >= 0; i-- )
+    {
+        for ( int j = size; j >= 0; j-- )
         {
-            for ( j = 0; j < size; i++ ) // each column -  build line buffer
-	    {
-                sprintf( line, format, table[i][j] );
-		line += cell_width; // assuming char is 8bit!
-	    }
-            printf( '%s\n' line );
-	    // No need to clean up the buffer. Rows have equal length
-	}
-	printf( 'SUM: %20d\n', sum );
+            table[i][j] = rand_in_range( min, range );
+        }
     }
 
-    int rand_in_range( int min, int range )
-    // Returns number within range with maintained random disribution.
-    // min + range must not exceed INT_MAX
+    double sum = tab_sort_sum( ptable, size );
+
+    int cell_width = 10; // log_2( max ) + 1
+    char *format[6];
+    sprintf( format, '%%%dd', cell_width ); // e.g. '%10d'
+    char *line[size * cell_width + 1];
+
+    for ( i = 0; i < size; i++ ) // each row
     {
-        unsigned long
-	  intsize    = (unsigned long) INT_MAX + 1, 
-          groupsize  = intsize / (unsigned long) range,
-	  failmargin = intsize % groupsize;
-        long r;
-	while ( intsize - failmargin <= (unsigned long) (r = rand()) );
-        return min + (int) (r / groupsize);
+        for ( j = 0; j < size; i++ ) // each column -  build line buffer
+        {
+            sprintf( line, format, table[i][j] );
+            line += cell_width; // assuming char is 8bit!
+        }
+        printf( '%s\n' line );
+        // No need to clean up the buffer. Rows have equal length
     }
+    printf( 'SUM: %20d\n', sum );
+}
 
+int rand_in_range( int min, int range )
+// Returns number within range with maintained random disribution.
+// min + range must not exceed INT_MAX
+{
+    unsigned long
+      intsize    = (unsigned long) INT_MAX + 1, 
+      groupsize  = intsize / (unsigned long) range,
+      failmargin = intsize % groupsize;
+    long r;
+    while ( intsize - failmargin <= (unsigned long) (r = rand()) );
+    return min + (int) (r / groupsize);
+}
+```
 **l1.c:**
-    double tab_sort_sum( double *tab, int tab_size )
-    {
-        return 0.0;
-    }
-
+```
+double tab_sort_sum( double *tab, int tab_size )
+{
+    return 0.0;
+}
+```
 **makefile:**
-    main: main.c l1.h
-    	gcc main.c -O -o main
-    l1.h: l1.c
-    	gcc l1.c -c -O -o l1.h
-
+```
+main: main.c l1.h
+    gcc main.c -O -o main
+l1.h: l1.c
+    gcc l1.c -c -O -o l1.h
+```
 
