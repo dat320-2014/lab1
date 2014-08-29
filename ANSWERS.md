@@ -147,7 +147,55 @@ ls -l
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** *YOUR ANSWER HERE*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *
+With double:
+```
+multiply:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movsd	%xmm0, -8(%rbp)
+	movsd	%xmm1, -16(%rbp)
+	movsd	-8(%rbp), %xmm0
+	mulsd	-16(%rbp), %xmm0
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	multiply, .-multiply
+	.ident	"GCC: (GNU) 4.4.7 20120313 (Red Hat 4.4.7-4)"
+	.section	.note.GNU-stack,"",@progbits
+```
+With float:
+```
+multiply:
+.LFB1:
+	.cfi_startproc
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	movss	%xmm0, -4(%rbp)
+	movss	%xmm1, -8(%rbp)
+	movss	-4(%rbp), %xmm0
+	mulss	-8(%rbp), %xmm0
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE1:
+	.size	multiply, .-multiply
+	.ident	"GCC: (GNU) 4.4.7 20120313 (Red Hat 4.4.7-4)"
+	.section	.note.GNU-stack,"",@progbits
+
+```
+*
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
