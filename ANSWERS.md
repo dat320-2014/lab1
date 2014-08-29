@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *`mkdir unixstuff/backups`*
+**Answer:** `mkdir unixstuff/backups`
 
 ###Exercise 1b
 
@@ -27,11 +27,13 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 (Remember, if you get lost, type `cd` by itself to return to your home-directory)
 
-**Answer:** 
+**Answer:**
+ 
     cd backups
     ls
     pwd
     /home/stud/ronnieb/unixstuff/backups
+
 
 ###Exercise 2a
 
@@ -44,17 +46,17 @@ Create a backup of your `science.txt` file by copying it to a file called `scien
 Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
 
 **Answer:**
-```
+
     mkdir tempstuff
     rmdir tempstuff 
-```
+
 
 ###Exercise 3a
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
 **Answer:** 
-```
+
     cat > list2
     orange
     plum
@@ -62,7 +64,7 @@ Using the above method, create another file called `list2` containing the follow
     grapefruit
     ^D
     cat list2` 
-```
+
 
 ###Exercise 3b
 
@@ -77,11 +79,11 @@ Try changing access permissions on the file `science.txt` and on the directory `
 Use `ls -l` to check that the permissions have changed.
 
 **Answer:** 
-```
+
 chmod o-rwx science.txt
 chmod ug+rwx backups
 ls -l
-```
+
 
 ##Shell questions
 
@@ -96,9 +98,9 @@ ls -l
 1. What option can we given to `ls` to show the hidden files?
   - **Answer:** `ls -a`
 1. What will the command `cat -n file` do?
-  - **Answer:** It will number all the output lines. 
+  - **Answer:** *It will number all the output lines.* 
 1. What will the command `echo -n hello` do?
-  - **Answer:** Echo hello without trailing newline.
+  - **Answer:** *Echo hello without trailing newline.*
 1. What command will display s list of the users who currently logged in in the system?
   - **Answer:** `who` 
 1. How do you change password on your account?
@@ -106,9 +108,9 @@ ls -l
 1. How can you list a file in reverse order?
   - **Answer:** `tail -r file`
 1. What does the `less` command do?
-  - **Answer:** List the content of a file one page at a time.
+  - **Answer:** *List the content of a file one page at a time.*
 1. With `less` how do you navigate?
-  - **Answer:** Down with enter. Or use pgup/pgdown or arrow keys.
+  - **Answer:** *Down with enter. Or use pgup/pgdown or arrow keys.*
 1. What command will display the running processes of the current user?
  - **Answer:** `ps`
 1. What command can be used to find the process(es) consuming the most CPU?
@@ -116,24 +118,24 @@ ls -l
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** Enter command mode, then :w 
+  - **Answer:** *Enter command mode, then `:w` * 
 1. What command/key is used to start entering text?
-  - **Answer:** From command mode: i (insert)
+  - **Answer:** *From command mode: `i` (insert)*
 1. What are the different modes the editor can be in?
-  - **Answer:** Command mode, Insert mode, Replace mode, 
+  - **Answer:** *Command mode, Insert mode, Replace mode* 
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** In command mode, type :4
+  - **Answer:** *In command mode, type `:4` *
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** Moves current line to buffer (deletes it).
+  - **Answer:** *Moves current line to buffer (deletes it).*
 1. How do you undo the most recent changes?
-  - **Answer:** u from command mode
+  - **Answer:** * `u` from command mode*
 1. How do you move back one word?
-  - **Answer:** b (small b) from command mode.
+  - **Answer:** * `b` (small b) from command mode.*
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** The `-c` option tells gcc not to run the linker. The source code file is only compiled to machine language (.o-file), it is not linked. So the .o-files are not executable. 
+  - **Answer:** *The `-c` option tells gcc not to run the linker. The source code file is only compiled to machine language (.o-file), it is not linked. So the .o-files are not executable.* 
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *`gcc -DDEBUG file.c -o file` In Listing 2 you have to compile with the -DDEBUG option on gcc. For Listing 3 you dont need -DDEBUG option, you just have to change the debug variable to 1.*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
@@ -194,21 +196,19 @@ multiply:
 ```
 *In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*
 
-1. How does `make` know if a file must be recompiled?
+8. How does `make` know if a file must be recompiled?
   - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *An include guard is needed to prevent double inclusions. If two .c-files includes the same .h-file this can cause compilation errors. For example you can end up with two equal function definitions if you forget include guards. Heres an example of an include guard, this can be put in a header-file:*
 
-```
-#ifndef _HEADER_H_
-#define _HEADER_H_
+    #ifndef _HEADER_H_
+    #define _HEADER_H_
 
-/* Code here */
+    /* Code here */
 
-#endif // #ifndef _HEADER_H_
-```
+    #endif // #ifndef _HEADER_H_
 
 ##Library Task
 
