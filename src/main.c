@@ -1,10 +1,3 @@
-//Make a table of size give by an argument on the command line.
-//Fill the table with random numbers between MIN and MAX
-//MIN = 0.0 if not specified with another value on command line, i.e. optional argument
-//MAX = 100.0 if not specified with another value on command line, i.e. optional argument
-//Call tab_sort_sum() in lib1
-//Print out table and sum
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -23,25 +16,29 @@ double randDouble(double min, double max){
 int main(int argc, char *argv[])
 {
 	int tableSize;
-	
 	//Default Values	
 	double min = 0;
 	double max = 100;
 
-	if(atoi(argv[1])){
-		tableSize = atoi(argv[1]);
-	}else{
-		printf("Error: You need to specify size yo\n");
+	if(argc == 1){
+		printf("Error: You need to specify Array Size\n");
+		printf("Usage: main [size] [min] [max]\n");
 		return -1;
+	}else{
+		tableSize = atoi(argv[1]);
 	}
 	
 	double table[tableSize];
-	
-	if(argv[2] != NULL){
+	if(argc >= 3){
 		min = atof(argv[2]);
+		printf("HELLOOOAOODOWDOAOWDE921823912316212616926912639");
+	}else{
+		min = 0.0;
 	}
-	if(argv[3] != NULL){
+	if(argc >= 4){
 		max = atof(argv[3]);
+	}else{
+		max = 100.0;
 	}
 	
 	
@@ -54,14 +51,14 @@ int main(int argc, char *argv[])
 
 	printf("\nHere is our table:\n");
 	for(i = 0; i < sizeof(table)/sizeof(double);i++){
-		printf("%f, ",table[i]);
+		printf("%.2f, ",table[i]);
 	}
 
 	printf("\n\nSorted table:\n");
    
 	double sum = tab_sort_sum(table,tableSize);
 
-	printf("\nSum of table: %f\n\n", sum);
+	printf("\n\n**Sum of table: %.2f**\n\n", sum);
 	
 return 0;
       

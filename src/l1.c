@@ -33,7 +33,7 @@ double tab_sort_sum(double *tab, int tab_size){
 	}
 	// Print the Table
 	for(i = 0; i < tab_size;i++){
-		printf("%f, ", array[i]);
+		printf("%.2f, ", array[i]);
 	}
 return sum;
 
