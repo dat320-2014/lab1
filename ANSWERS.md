@@ -201,7 +201,16 @@ multiply:
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *An include guard is needed to prevent double inclusions. If two .c-files includes the same .h-file this can cause compilation errors. For example you can end up with two equal function definitions if you forget include guards. Heres an example of an include guard, this can be put in a header-file:*
+
+```
+#ifndef _HEADER_H_
+#define _HEADER_H_
+
+/* Code here */
+
+#endif // #ifndef _HEADER_H_
+```
 
 ##Library Task
 
