@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *`mkdir backups`*
+**Answer:** *`cd unixstuff` `mkdir backups`*
 
 ###Exercise 1b
 
@@ -45,16 +45,17 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** **
-    `cat > list2
-    orange
-    plum
-    mango
-    grapefruit
-    ^D
+**Answer:** *
+        
+        `cat > list2
+        orange
+        plum
+        mango
+        grapefruit
+        ^D
 
-    cat list2`
-
+        cat list2`
+*
 ###Exercise 3b
 
 Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
@@ -132,13 +133,17 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** *
     
         float multiply(float x1, float x2){
-           return x1*x2;
+           
+	   return x1*x2;
+
         }
 
         int main(void){
-           int integer;
+           
+	   int integer;
            char character;
            short shortvar;
+           
            float floating;
 
            printf("Hello, World!\n");
@@ -153,26 +158,26 @@ Use `ls -l` to check that the permissions have changed.
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *
 
-    multiply:
-    .LFB0:
-	    .cfi_startproc
-	    pushq	%rbp
-	    .cfi_def_cfa_offset 16
-	    .cfi_offset 6, -16
-	    movq	%rsp, %rbp
-	    .cfi_def_cfa_register 6
-	    movsd	%xmm0, -8(%rbp)
-	    movsd	%xmm1, -16(%rbp)
-	    movsd	-8(%rbp), %xmm0
-	    mulsd	-16(%rbp), %xmm0
-	    popq	%rbp
-	    .cfi_def_cfa 7, 8
-	    ret
-	    .cfi_endproc
+        multiply:
+        .LFB0:
+	        .cfi_startproc
+	        pushq	%rbp
+	        .cfi_def_cfa_offset 16
+	        .cfi_offset 6, -16
+	        movq	%rsp, %rbp
+	        .cfi_def_cfa_register 6
+	        movsd	%xmm0, -8(%rbp)
+	        movsd	%xmm1, -16(%rbp)
+	        movsd	-8(%rbp), %xmm0
+	        mulsd	-16(%rbp), %xmm0
+	        popq	%rbp
+	        .cfi_def_cfa 7, 8
+	        ret
+	        .cfi_endproc
     
-    The `mulsd` Instruction performing the multiplication. When using the float type, it uses the `mulss` insturction.
+The `mulsd` Instruction performing the multiplication. When using the float type, it uses the `mulss` insturction.
 
-    *
+*
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *Make checks the timestamp of the executable. If it is older than the source file required to make it, one can asume it is outdated and needs to be recompiled in order to update the executable.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
