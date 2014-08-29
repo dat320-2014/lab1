@@ -74,7 +74,7 @@ Use `ls -l` to check that the permissions have changed.
 1. What option can we given to `ls` to show the hidden files?
   - **Answer:** *-a*
 1. What will the command `cat -n file` do?
-  - **Answer:** *nummerer linjene i filen*
+  - **Answer:** *it numbers each line the file*
 1. What will the command `echo -n hello` do?
   - **Answer:** *does not print the newline character.*
 1. What command will display s list of the users who currently logged in in the system?
@@ -111,9 +111,9 @@ Use `ls -l` to check that the permissions have changed.
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *gcc-c hello.c -o hello.o*
+  - **Answer:** *gcc-c hello.c -o hello.o, can be used to share with other, and then linked together to make an executable.*
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** * gcc -g hello.c -o hello*
+  - **Answer:** * gcc -DDEBUG hello.c -o hello*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *Listing 2 is clearly better than Listing 3. Listing 2 will have its filesize reduced if not in debugmode. While Listing 3 has the same size no matter what mode it is compiled in.*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
@@ -123,9 +123,9 @@ Use `ls -l` to check that the permissions have changed.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** *added: int i; int debug = 1; static int a = 1;*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *double -> mulsd, float -> mulss*
+  - **Answer:** *double -> mulsd, float -> mulss, no idea why, I guess the ALU in the processor has different tools for different datatypes.*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *it checks the datestamp on the files to see if any of the precompiled files have been changed.*
+  - **Answer:** *it checks the datestamp on the files to see if any of the precompiled files have been changed since last compilation.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *make -f mymakefile*
 1. How do you implement an *include guard*, and why is it needed?
@@ -136,11 +136,90 @@ Use `ls -l` to check that the permissions have changed.
 Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
-	{
+    {
+    	int tableSize;
+    double min = 0.0;
+    double max = 100.0;
+	
+    if(atoi(argv[1])){
+    	tableSize = atoi(argv[1]);
+    }else{
+    	printf("You need to specify table size!");
+    }
+	
+    double table[tableSize];
+    if(argc >= 3 ){
+    	min = atof(argv[2]);
+    }else {
+    	min = 0.0;
+    }
+    if(argc  >= 4){
+    	max = atof(argv[3]);
+    }else{
+    	max = 100.0;
+    }
+	
+    srand(time(NULL));
+    int i;
+
+    for(i = 0; i < tableSize; i++){
+    	table[i] = randDouble(min,max);
+    }
+    printf("Here is our array :\n");
+    for(i=0; i < tableSize; i++){
+    	printf("%.2f, ", table[i]);
+
+    }
+	
+    printf("and the sum: \n %.2f,\n ",tab_sort_sum(table, tableSize));
+
+	
+    }
+	
+	
+
     }
     
-	double tab_sort_sum( double *tab, int tab_size )
-	{
-	}
+    double tab_sort_sum( double *tab, int tab_size )
+    {
+    	double table[tab_size];
+    double sum;
+    int i;
+	
+
+    for(i= 0; i < tab_size; i++){
+    	table[i] = tab[i];
+    }
+
+
+
+    for(i=0; i < tab_size -1; ++i){
+    	int j;
+    	double temp;
+    	int  min = i;
+    	for(j= i+1; j < tab_size; ++j){
+    		if(table[j] < table[min]) min = j;
+    			}
+    			temp = table[i];
+    			table[i] = table[min];
+			table[min] = temp;
+    	}
+
+		
+	
+
+
+    printf("\nThe sorted list\n");	
+    for(i = 0; i < tab_size; i++){
+    	printf(" %.2f ", table[i]);
+    }
+    printf("\n");
+    for(i = 0; i < tab_size; i++){
+    	sum += table[i];
+
+    }
+    return sum;
+    }
+	
 
 
