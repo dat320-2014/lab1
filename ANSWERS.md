@@ -129,27 +129,26 @@ Use `ls -l` to check that the permissions have changed.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *The .map file include a list over program entrypoints and which libraries/object files the linker uses.*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** **
+  - **Answer:** *
     
-    #include <stdio.h>
+        float multiply(float x1, float x2){
+           return x1*x2;
+        }
 
-    float multiply(float x1, float x2){
-       return x1*x2;
-    }
+        int main(void){
+           int integer;
+           char character;
+           short shortvar;
+           float floating;
 
-    int main(void){
-       int integer;
-       char character;
-       short shortvar;
-       float floating;
+           printf("Hello, World!\n");
 
-       printf("Hello, World!\n");
+           printf("%.3f\n", multiply(3.2,4.0));
 
-       printf("%.3f\n", multiply(3.2,4.0));
+           return 0;
 
-    return 0;
-
-    }
+         }
+*
     
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *
