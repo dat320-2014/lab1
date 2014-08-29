@@ -147,7 +147,8 @@ Use `ls -l` to check that the permissions have changed.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** *YOUR ANSWER HERE*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *With double:*```
+  - **Answer:** *With double:*
+```
 multiply:
 .LFB1:
 	.cfi_startproc
@@ -168,7 +169,8 @@ multiply:
 	.size	multiply, .-multiply
 	.ident	"GCC: (GNU) 4.4.7 20120313 (Red Hat 4.4.7-4)"
 	.section	.note.GNU-stack,"",@progbits
-```*With float:*```
+```*With float:*
+```
 multiply:
 .LFB1:
 	.cfi_startproc
@@ -190,7 +192,8 @@ multiply:
 	.ident	"GCC: (GNU) 4.4.7 20120313 (Red Hat 4.4.7-4)"
 	.section	.note.GNU-stack,"",@progbits
 
-```*In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*
+```
+*In the first snippet MOVSD (Move Scalar Double-Precision Floating-Point Value) ia used. In the second, MOVSS (Move Scalar Single-Precision Floating-Point Value) is used.*
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *From the man-page: Make uses the last-modification times of the files to decide which files needs to be updated.*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
