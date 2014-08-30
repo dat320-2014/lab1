@@ -46,6 +46,7 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
 **Answer:** *
+
     cat > list2
     orange
     plum
