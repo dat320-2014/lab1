@@ -134,7 +134,7 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** 
     
     ...
-    #define CONSTANT 42 //.rodata
+    \#define CONSTANT 42 //.rodata
     ...
     int i; //.bss
     char string[] = "Hello!"; //.data
