@@ -130,13 +130,12 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** *Informations about memory --> content (e.x strings) will be written in the section .data, constants will be in the .rodata (read only) or the uninitialized data will be in the .bss section and in the map file is the info about where in memory it is.*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** 
-    ```
-    ...
-    #define CONSTANT 42 //.rodata
-    ...
-    int i; //.bss
-    char string[] = "Hello!"; //.data
-    ```
+```
+#define CONSTANT 42 //.rodata
+//...some code here
+int i; //.bss
+char string[] = "Hello!"; //.data
+```
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *Assembly instructions (for double): `mov`, `push`, `movsd`, `mulsd`. Assemly instruction (for float): `mov`, `push`, `movss`, `mulss`. Double is twice larger then float (32 bit vs. 64 bit), the instruction `movss` moves 32 bit, `movsd` moves 64 bit.*
 1. How does `make` know if a file must be recompiled?
