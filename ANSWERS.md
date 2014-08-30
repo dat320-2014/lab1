@@ -140,9 +140,9 @@ The public function part is followed by the line information After this, you wil
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *When executed, make reads the makefile and sets up a table of file dependencies and processing rules for the desired target file. It then examines the dates on each file to see which have been changed since the target file was last made. If a file has been changed, the other files dependent on it are re-	 made, starting at the lowest level and proceeding up until the final target file is correctly remade.
   
-in short: $make -f mymakefile*
+	in short: $make -f mymakefile*
 
-1. How do you implement an *include guard*, and why is it needed?
+10. How do you implement an *include guard*, and why is it needed?
   - **Answer:** * #include guard, sometimes called a macro guard, is a particular construct used to avoid the problem of double inclusion when dealing with the include directive.
   
   File 'grandfather.h'
@@ -171,10 +171,48 @@ Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
 	{
+		//Make a table of size given by an argument on the command line.
+	int listSize;
+       	sscanf(argv[1], "%d", &listSize);
+	int list[listSize];
+	printf("listSize: %d\n", listSize);
+
+	//MIN = 0.0 if not specified with another value in command line, i.e optional argument
+	int MIN = 0;
+	if(argc > 2) sscanf(argv[2], "%d", &MIN);
+	printf("MIN: %d\n", MIN);
+
+	//MAX = 100.0 if not specified with another value on command line, i.e optional argument
+	int MAX = 100;
+	if(argc > 3) sscanf(argv[3], "%d", &MAX);
+	printf("MAX: %d\n", MAX);
+
+	//Fill the table with random numbers between MIN and MAX.
+	int i = 0;
+	for(i = 0; i < listSize; i++) {
+		list[i] = rand() %(MAX -  MIN + 1);
+		printf("list: %d\n", list[i]);
+	}
+
+	//Call tab_sort_sum() in lib1
+	double sum = table_sort_sum(list, listSize);
+	printf("Sum: %.2f\n", sum);
+
+	//Print out table and sum.
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
+	
+	// Sort the table, return the sum and the sorted table.
+    qsort(tab, tab_size, sizeof(double), sort);
+	double sum;
+	int i;
+	for(i = 0; i < tab_size; i++) {
+		double tableValue = tab[i];
+		printf("%.2d\n", tableValue);
+		sum += tableValue;
+	}
 	}
 
 
