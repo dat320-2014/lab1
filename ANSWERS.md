@@ -115,7 +115,7 @@ Use `ls -l` to check that the permissions have changed.
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** If we want gcc to only produce an .o file . We add the flag -c in the command. The command  ` gcc -o nyaste.o -c ny.c` will yield a new .o file, nyaste.o, from the .c file ny.c  .    A .o file only has 
+  - **Answer:** If we want gcc to only produce an .o file . We add the flag -c in the command. The command  ` gcc -o nyaste.o -c ny.c` will yield a new .o file, nyaste.o, from the .c file ny.c  .    A .o file only containes object code, we could think of this as follows. The complete .exe program is when all .o files have been linked, this is the final stage before the program is ready for use. o.file can be code modules that we have made, that togheter make up the final program. Libraries also come in .o files. 
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *YOUR ANSWER HERE*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
