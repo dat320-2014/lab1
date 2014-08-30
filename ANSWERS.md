@@ -131,8 +131,9 @@ Use `ls -l` to check that the permissions have changed.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *Informations about memory --> content (e.x strings) will be written in the section .data, constants will be in the .rodata (read only) or the uninitialized data will be in the .bss section and in the map file is the info about where in memory it is.*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *I have added:*
-  
+  - **Answer:** *I have added:
+    
+    ...
     #define CONSTANT 42 //.rodata
     ...
     int i; //.bss
