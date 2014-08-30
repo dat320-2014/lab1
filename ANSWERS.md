@@ -123,9 +123,7 @@ Use `ls -l` to check that the permissions have changed.
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *For Listing2: `gcc file.c -DDEBUG -o outputfile`. Turn on/off: just with this parameter (-DDEBUG).  For Listing3 there is the common command: `gcc file.c -o outputfile`. Turn on/off: Set the variable debug to 1/0.*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *Listing 2: Pros: If the debug is off, during the preprocessing will be the code whit debugging "remove" (part #ifdef DEBUG #endif will apear in the code only if the debug is on), so it will be faster (no conditions during executing the program); to turn /off/on debugging we do not change the code, just add an parameter to command. Cons: We cannot turn on debugging only for a part of code.
-
-  Listing 3: Pros: We can set parts of code which we can debug (e.x.: only tle last function...). Cons: To turn on/off we need to change the code. If debugging is off, there will still be the conditions in the code --> slower.*
+  - **Answer:** *Listing 2: Pros: If the debug is off, during the preprocessing will be the code whit debugging "remove" (part #ifdef DEBUG #endif will apear in the code only if the debug is on), so it will be faster (no conditions during executing the program); to turn /off/on debugging we do not change the code, just add an parameter to command. Cons: We cannot turn on debugging only for a part of code. Listing 3: Pros: We can set parts of code which we can debug (e.x.: only tle last function...). Cons: To turn on/off we need to change the code. If debugging is off, there will still be the conditions in the code --> slower.*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *`gcc file.c -Wl, -Map file.map -o outputfile` Linker (ld).*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
@@ -147,12 +145,12 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** *`make -f mymakefile`*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** 
-    ```
-    #ifndef FILE.H
-    #define FILE.H
-    	/*some body*/
-    #endif	 
-    ```
+```
+#ifndef FILE.H
+#define FILE.H
+  	/*some body*/
+#endif	 
+```
 It protects to include the files in a circle (first need to include the second, the second need to include the first...) --> error while compiling.*
 
 ##Library Task
