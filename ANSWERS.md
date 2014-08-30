@@ -141,6 +141,7 @@ The public function part is followed by the line information After this, you wil
   - **Answer:** *When executed, make reads the makefile and sets up a table of file dependencies and processing rules for the desired target file. It then examines the dates on each file to see which have been changed since the target file was last made. If a file has been changed, the other files dependent on it are re-	 made, starting at the lowest level and proceeding up until the final target file is correctly remade.
   
 in short: $make -f mymakefile*
+
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** * #include guard, sometimes called a macro guard, is a particular construct used to avoid the problem of double inclusion when dealing with the include directive.
   
