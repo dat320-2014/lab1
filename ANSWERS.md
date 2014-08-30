@@ -74,7 +74,7 @@ Use `ls -l` to check that the permissions have changed.
 1. What option can we given to `ls` to show the hidden files?
   - **Answer:** *$ls -a*
 1. What will the command `cat -n file` do?
-  - **Answer:** *number all output lines*
+  - **Answer:** *number all output lines.*
 1. What will the command `echo -n hello` do?
   - **Answer:** *it will not output the trailing newline*
 1. What command will display s list of the users who currently logged in in the system?
