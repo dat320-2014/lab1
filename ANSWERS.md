@@ -136,26 +136,28 @@ The public function part is followed by the line information After this, you wil
 	$gcc hello.c -save-temps-o hello
 	 //Gives equal assembly code as before.*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *make checks the last modified date*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *When executed, make reads the makefile and sets up a table of file dependencies and processing rules for the desired target file. It then examines the dates on each file to see which have been changed since the target file was last made. If a file has been changed, the other files dependent on it are re-	 made, starting at the lowest level and proceeding up until the final target file is correctly remade.*
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** * #include guard, sometimes called a macro guard, is a particular construct used to avoid the problem of double inclusion when dealing with the include directive.
   File 'grandfather.h'
-    #ifndef GRANDFATHER_H
-    #define GRANDFATHER_H
+    ifndef GRANDFATHER_H
+    define GRANDFATHER_H
  
     struct foo {
      int member;
     };
  
-    #endif /* GRANDFATHER_H */
+    endif /* GRANDFATHER_H */
 
 File 'father.h'
-    #include "grandfather.h"
+    include "grandfather.h"
+	
 File 'child.c'
-    #include "grandfather.h"
-    #include "father.h"	
+    include "grandfather.h"
+    include "father.h"	
+	
 Here, the 1st. inclusion of "grandfather.h" causes the macro GRANDFATHER_H to be defined. Then, when "child.c" includes "grandfather.h" the second time, the #ifndef test returns false, and the preprocessor skips down to the #endif, thus avoiding the second definition of struct foo. The program compiles correctly.
 	*
 
