@@ -45,14 +45,14 @@ Create a directory called `tempstuff` using `mkdir`, then remove it using the `r
 
 Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
 
-**Answer:** *cat > list2
-orange
-plum
-mango
-grapefruit
-^D
+**Answer:**  
+cat > list2  
+orange  
+plum  
+mango  
+grapefruit  
+^D  
 cat list2
-*
 
 ###Exercise 3b
 
@@ -66,9 +66,10 @@ Try changing access permissions on the file `science.txt` and on the directory `
 
 Use `ls -l` to check that the permissions have changed.
 
-**Answer:** *chmod 777 science.txt
-chmod 644 backups
-ls -l*
+**Answer:**  
+chmod 777 science.txt  
+chmod 644 backups  
+ls -l  
 
 ##Shell questions
 
@@ -120,7 +121,7 @@ ls -l*
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *gcc -c
+  - **Answer:** *gcc -c  	
 You don't do the linking step*
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *In listing 2 you turn on debug by passing -D DEBUG to gcc.
@@ -142,17 +143,18 @@ In listing 2 the debug code will not be compile as it is removed during the prep
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *make -f mymakefile*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *#ifndef FILE_H
-#define FILE_H
-%* code *%
-#endif
-
-To prevent code from being included more than once*
+  - **Answer:**  
+#ifndef FILE_H  
+#define FILE_H  
+%* code *%  
+#endif  
+  
+To prevent code from being included more than once
 
 ##Library Task
 
 Insert your code between the brackets `{}`:
-
+```c
     void main( int argc, char *argv[] )
 	{
 		int min = 0;
@@ -206,5 +208,4 @@ Insert your code between the brackets `{}`:
 	{
 		return (*(double*) a - *(double*) b);
 	}
-
-
+```
