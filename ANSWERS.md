@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** `mkdir backups`
+**Answer:** `mkdir unixstuff/backups`
 
 ###Exercise 1b
 
@@ -93,7 +93,7 @@ Use `ls -l` to check that the permissions have changed.
 ##Shell questions
 
 1. What option with the command `rm` is required to remove a directory?
-  - **Answer:** `rmdir`
+  - **Answer:** `rm -dir`
 1. What is the command used to display the manual pages for any command?
   - **Answer:** The `man` command
 1. What command will show the first 5 lines of an input file?
@@ -115,7 +115,7 @@ Use `ls -l` to check that the permissions have changed.
 1. What does the `less` command do?
   - **Answer:** Reads your input file, does not have to read the whole input file before starting.
 1. With `less` how do you navigate?
-  - **Answer:** By using key shortcuts (Like RETURN(one line forward or SPACE(one window forward)
+  - **Answer:** By using key shortcuts (Like RETURN(one line forward or SPACE(one 		window forward)
 		Shortcuts are listed using `less --help`
 1. What command will display the running processes of the current user?
   - **Answer:** `ps`
@@ -152,9 +152,8 @@ Use `ls -l` to check that the permissions have changed.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** `gcc hello.c -o hello -Wl,Map=hello.map` The linker tool is responsible for producing the *map* file.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** A link map provides information about the link, including the following:
-		Where object files are mapped into memory. How common symbols are allocated. All archive members included 		in the link, with a mention of the symbol which caused the archive member to be brought in.
-		The values assigned to symbols.
+  - **Answer:** A link map provides information about the link, including the following: 
+Where object files are mapped into memory. How common symbols are allocated. All archive members included in the link, with a mention of the symbol which caused the archive member to be brought in.The values assigned to symbols.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
   - **Answer:** ```
 		int datavar = 13;
@@ -164,24 +163,82 @@ Use `ls -l` to check that the permissions have changed.
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** For the double it uses `push, movsd, mulsd, leave and ret`
 		For the float it uses `push, movss, mulss, leave and ret`	
-		difference is that is uses different mov and mul instructions, because 		    	of the difference in the data type of the functions.	
+		difference is that is uses different mov and mul instructions, because 		    	of the difference in the data type of the functions, float is 32-bit and double is 64.	
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** File modification timestamp
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `make -f mymakefile`
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** By implementing a test around the includes that checks if there might 		be multiple definitions when used in different files.
 
 ##Library Task
 
 Insert your code between the brackets `{}`:
 
-    void main( int argc, char *argv[] )
+	void main( int argc, char *argv[] )
 	{
-    }
+		int tab_size;
+	       	double min;
+		double max;
+
+		if (argc < 2)
+		{
+		printf("Please provide a table size.\n");
+		}
+ 		else if (argc == 3)
+		{
+        		printf("Please provide MAX value. Using default(0.0 - 100.0).\n");
+        		min = 0.0;
+        		max = 100.0;
+ 		}
+ 			else if (argc == 4)
+ 		{
+        		sscanf(argv[2], "%lf", &min);
+			sscanf(argv[3], "%lf", &max);
+ 		}
+ 		else if (argc > 4)
+ 		{
+        		printf("Too many arguments. Using default(0.0 - 100).\n");
+        		min = 0.0;
+        		max = 100.0;
+ 		}
+ 		else
+ 		{
+        		min = 0.0;
+        		max = 100.0;
+ 		}
+
+ 		sscanf(argv[1], "%d", &tab_size);
+ 		double table[tab_size];
+ 		srand(time(NULL));
+ 		int i;
+ 		for (i = 0; i < tab_size; i++)
+ 		{
+        		table[i] = ((double)rand()/INT_MAX) * (max - min  + 1) + min;
+		}
+
+ 		printf("Table: \n");
+ 		int j;
+ 		for (j = 0; j < tab_size; j++)
+        	{
+ 			printf("Element[%d] = %f\n", j, table[j]);
+ 		}
+
+ 		double sum;
+ 		sum = tab_sort_sum(table, tab_size);
+ 		printf("Sum:%f\n", sum);
+    	}
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
+	 	qsort(tab, tab_size, sizeof(double), cmpfunc);
+ 		int i;
+ 		double sum;
+ 		for(i = 0; i < tab_size; i++)
+ 		{
+        		sum += tab[i];
+ 		}
+ 		return sum;
 	}
 
 
