@@ -158,73 +158,105 @@ Insert your code between the brackets `{}`:
 **main.c:**
 ```
 #include <stdio.h>
+#include <stdint.h>
 #include <time.h>
 #include <stdlib.h>
-#include <limits.h>
-#include "l1.h"
+// TODO: #include "l1.c"
 
-void main( int argc, char *argv[] )
+int main( int argc, char *argv[] )
 {
-    int
-      size = 4,
-      min = 0,
-      max = 100,
-      range = max - min,
-      table[size][size];
-    srand( time( NULL )); // seed random generator
-    for ( int i = size; i >= 0; i-- )
+    uint8_t debug = 0;
+    int size = 8;
+    double min = 0.0;
+    double range = 100.0;
+    int i;
+    char *p;
+    for ( i = 1; i < argc; i++ )
     {
-        for ( int j = size; j >= 0; j-- )
+        if ( !strcmp( argv[i], "-r" )) // range
         {
-            table[i][j] = rand_in_range( min, range );
+            range = strtod( argv[++i], &p );
+	    if ( !range )
+            {
+                printf( "Argument to -r must be a positive number.\n" );
+		exit(1);
+            }
+        }
+	else if ( !strcmp( argv[i], "-m" )) // minimum
+        {
+            min = strtod( argv[++i], &p );
+        }
+	else if ( !strcmp( argv[i], "-s" )) // table size
+        {
+            size = strtod( argv[++i], &p );
+        }
+	else if ( !strcmp( argv[i], "-d" )) // debug
+        {
+            debug = -1;
+            for ( i = 1; i < argc; i++ )
+            {
+                printf( "argv[%i]: \"%s\"\n", i, argv[i] );
+            }
         }
     }
+    double div = RAND_MAX / range;
+    double table[size];
 
-    double sum = tab_sort_sum( ptable, size );
+    if ( debug )
+    {
+        printf( "table size: %i\nminimum:    %.2f\nrange:      %.2f", size, min, range );
+    }
 
-    int cell_width = 10; // log_2( max ) + 1
-    char *format[6];
-    sprintf( format, '%%%dd', cell_width ); // e.g. '%10d'
-    char *line[size * cell_width + 1];
+    srand( time( NULL )); // seed random generator
+    for ( i = size; i >= 0; i-- )
+    {
+        table[i] = min + ((double) rand()) / div;
+    }
+
+    double sum = 0.0; //TODO: tab_sort_sum( &table, size );
+
+    /*
+    int cell_width = 4; // TODO: log_2( max ) + 3
+    char *formatstr[6];
+    sprintf( formatstr, '%%%dd\n', cell_width ); // e.g. '%10d'
+    const char *format[] = (const char *) formatstr;
+    */
+    const char format[] = "%8.2f\n";
 
     for ( i = 0; i < size; i++ ) // each row
     {
-        for ( j = 0; j < size; i++ ) // each column -  build line buffer
-        {
-            sprintf( line, format, table[i][j] );
-            line += cell_width; // assuming char is 8bit!
-        }
-        printf( '%s\n' line );
-        // No need to clean up the buffer. Rows have equal length
+        printf( format, table[i] );
     }
-    printf( 'SUM: %20d\n', sum );
-}
-
-int rand_in_range( int min, int range )
-// Returns number within range with maintained random disribution.
-// min + range must not exceed INT_MAX
-{
-    unsigned long
-      intsize    = (unsigned long) INT_MAX + 1, 
-      groupsize  = intsize / (unsigned long) range,
-      failmargin = intsize % groupsize;
-    long r;
-    while ( intsize - failmargin <= (unsigned long) (r = rand()) );
-    return min + (int) (r / groupsize);
+    printf( "SUM: %f\n", sum );
+    return 0;
 }
 ```
 **l1.c:**
+unfinished
 ```
+#include <stdlib.h>
+
+int *cmp( const double *a, const double *b )
+{
+    if ( *a > *b ) return 1;
+    if ( *a < *b ) return -1;
+    return 0;
+}
+
 double tab_sort_sum( double *tab, int tab_size )
 {
-    return 0.0;
+    qsort( tab, tab_size, sizeof(*tab), cmp );
+    double sum = 0;
+    int i;
+    for ( i = 0; i >= 0; i-- )
+    {
+        sum += tab[i];
+    }
+    return sum;
 }
 ```
 **makefile:**
 ```
-main: main.c l1.h
+main: main.c l1.c
     gcc main.c -O -o main
-l1.h: l1.c
-    gcc l1.c -c -O -o l1.h
 ```
-
