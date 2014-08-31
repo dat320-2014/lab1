@@ -178,7 +178,7 @@ Insert your code between the brackets `{}`:
 		double tab[n];
 
 		for (i = 0; i < n; i++) {
-			table[i] = min + (rand() % (int)(max - min + 1));
+			tab[i] = min + (rand() % (int)(max - min + 1));
 		}
 
 		double sum = tab_sort_sum(tab, n);
