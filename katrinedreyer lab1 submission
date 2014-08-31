@@ -1,0 +1,323 @@
+##Important Instructions
+
+Please preserve the structure of this file, as it will subjected to *partial*
+automatic analysis. **Only insert your answers by replacing the text `YOUR ANSWER HERE`; do not delete anything else.** 
+
+Please use [markdown](https://help.github.com/articles/markdown-basics) formating to typeset code and Unix commands with the backtick character, for example, `ls -la`, or if you want to write code blocks, each line should be indented with four spaces, as done in the code below:
+
+    #include <stdio.h>
+    
+    int main(void) {
+    	printf("Hello, world!\n");
+    	return 0;
+    }
+
+
+##Exercises from the online Unix tutorial
+
+###Exercise 1a
+
+Make another directory inside the `unixstuff` directory called `backups`
+
+**Answer:** *mkdir unixstuff*
+
+###Exercise 1b
+
+Use the commands `cd`, `ls` and `pwd` to explore the file system.
+
+(Remember, if you get lost, type `cd` by itself to return to your home-directory)
+
+**Answer:** *ls = find what is in your current working directory. cd = change the current working directory. 
+		pwd = print the working directory, find out the absolute pathname of your home directory. When i typed 		this now it showed: /home/stud/katrineb*
+
+###Exercise 2a
+
+Create a backup of your `science.txt` file by copying it to a file called `science.bak`
+
+**Answer:** *mv science.txt science.bak*
+
+###Exercise 2b
+
+Create a directory called `tempstuff` using `mkdir`, then remove it using the `rmdir` command.
+
+**Answer:** *mkdir tempstuff
+	     rmdir tempstuff*
+
+###Exercise 3a
+
+Using the above method, create another file called `list2` containing the following fruit: orange, plum, mango, grapefruit. Read the contents of `list2`.
+
+**Answer:** *cat > list2
+		orange
+		plum
+		mango
+		grapefruit
+		^D
+		cat list2*
+
+###Exercise 3b
+
+Using pipes, display all lines of `list1` and `list2` containing the letter 'p', and sort the result.
+
+**Answer:** *grep -in p list1
+	     sort < list1
+	     grep -in p list2
+	     sort < list2*
+
+###Exercise 5a
+
+Try changing access permissions on the file `science.txt` and on the directory `backups`.
+
+Use `ls -l` to check that the permissions have changed.
+
+**Answer:** *chmod go -rwx science.txt (this will remove read, write and execute permisions on the file science.txt
+	     for the group and others.
+	     chmod a +rw backups (this will give read, write permitions on the directory to all)*
+
+##Shell questions
+
+1. What option with the command `rm` is required to remove a directory?
+  - **Answer:** *rmdir*
+1. What is the command used to display the manual pages for any command?
+  - **Answer:** *man*
+1. What command will show the first 5 lines of an input file?
+  - **Answer:** *head -5 *
+1. What command can be used to rename a file?
+  - **Answer:** *mc file1 file2*
+1. What option can we given to `ls` to show the hidden files?
+  - **Answer:** *ls -a*
+1. What will the command `cat -n file` do?
+  - **Answer:** *adds line numbers*
+1. What will the command `echo -n hello` do?
+  - **Answer:** *puts hello in front of my user name: hellokatrineb@badne7:~$*
+1. What command will display s list of the users who currently logged in in the system?
+  - **Answer:** *who*
+1. How do you change password on your account?
+  - **Answer:** *passwd, then type old password and then new password*
+1. How can you list a file in reverse order?
+  - **Answer:** *Tac*
+1. What does the `less` command do?
+  - **Answer:** *writes the contents of a file onto the screen a page at the time*
+1. With `less` how do you navigate?
+  - **Answer:** *space bar to see next page and q to stop reading*
+1. What command will display the running processes of the current user?
+  - **Answer:** *ps*
+1. What command can be used to find the process(es) consuming the most CPU?
+  - **Answer:** *top*
+
+##vi questions
+1. How do we save a file in `vi` and continue working?
+  - **Answer:** *:w*
+1. What command/key is used to start entering text?
+  - **Answer:** *i*
+1. What are the different modes the editor can be in?
+  - **Answer:** *COMMAND and INSERT*
+1. What command can be used to place the cursor at the beginning of line 4?
+  - **Answer:** *:4 and then [enter]*
+1. What will `dd` command do (in command-mode)?
+  - **Answer:** *deletes the whole line the cursor is at*
+1. How do you undo the most recent changes?
+  - **Answer:** *u*
+1. How do you move back one word?
+  - **Answer:** *b*
+
+##The C Language and Make tool Questions
+
+1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
+  - **Answer:** *“gcc –g –O –c hello.c” . The difference is that the hello executable creates multiple fases when compiling the file, while the –o file stops the compiling process earlier. *
+1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
+  - **Answer:** *Listing 2 debug is: “gcc hello.c –DDEBUG –o hello”. To stop debugging this "gcc hello.c –o hello”. Listing 2 requires debugging to be set in compilation mode, while listing 3 has to be set during the run-time! *
+1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
+  - **Answer:** *Listing 2 
+Pros: You only have to declare the debugging symbol in compile mode once for it to work, quick and easy. 
+Cons: not as flexible as debugging in runtime mode, need to recompile to remove debugging. 
+
+Listing 3 
+Pros: very flexible since all the changes can be done during runtime, without the need to recompile. 
+Cons: a bit more work to do it.
+*
+1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
+  - **Answer:** *gcc -o hello -Wl,-Map,hello.map hello.c. 
+the –Wi and the –Map creates the map file
+*
+1. What is the content of each of the sections in a *map* file. Explain briefly.
+  - **Answer:** *This is where the object files are wrapped into memory, and how common symbols are allocated. All archive members included in the link, with a mention of the symbol which caused the archive member to be brought in. The values are assigned to symbols. *
+1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
+  - **Answer:** *YOUR ANSWER HERE*
+1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
+  - **Answer:** *The command used is: “gcc-02 –S –c hello.c”. The difference is that in the assembly code: LFB12 -> cfi_startproc -> mulss changes to mulsd when we changed the double to float.*
+1. How does `make` know if a file must be recompiled?
+  - **Answer:** *If the creation date of the execution file is older than the creation of the .c file , then the makefile knows it needs to recompile. *
+1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
+  - **Answer:** *make -f mymakefile*
+1. How do you implement an *include guard*, and why is it needed?
+  - **Answer:** *#include filename. Used to avoid the problem of double inclusion when dealing with the include directive*
+
+##Library Task
+
+Insert your code between the brackets `{}`:
+/* main.c file:*/
+#include <stdio.h>
+
+#include "lib1.h"
+
+
+    void main( int argc, char *argv[] )
+	{
+	int tab_size = 5, min = 0, max = 100, i = 0;
+
+	double sum;
+	
+	char rangeReply[10];
+
+	
+	printf("Please write your desired table size: ");
+
+	scanf("%d", &tab_size);
+
+
+	while(strcmp(rangeReply, "y") != 0 && strcmp(rangeReply, "n") != 0)
+	{
+		
+	printf("Would you like to specify min and max value (default: 0-100)? (y/n): ");
+
+		scanf("%s", &rangeReply);
+	
+	}
+
+	
+	if(strcmp(rangeReply, "y") == 0)
+	{
+		
+	printf("Please write desired minimum value: ");
+
+        scanf("%d", &min);
+
+		
+	printf("Please write desired maximum value: ");
+        	
+	scanf("%d", &max);
+	
+	}
+
+	
+	double tab[tab_size];
+
+	
+	srand((unsigned)time(NULL));
+
+	
+	for(i = 0; i < tab_size; i++)
+	{
+		
+	tab[i] = (rand() % (max-min)) + min;
+	
+	}
+	
+	
+	sum  = tab_sort_sum(tab, tab_size);
+
+	
+	for(i = 0; i < tab_size; i++)
+	{
+        	
+	printf("%f \n", tab[i]);
+
+        }
+
+	
+	printf("Sum is: %f \n", sum);	
+
+    }
+    
+#include <stdio.h>
+
+#include "lib1.h"
+
+/*lib1.c file: */
+double tab_sort_sum(double *tab, int tab_size)
+{
+	
+	int i = 0, c, d, n, swap;
+
+		double sum;
+
+	
+		n = tab_size;
+
+	
+/* Bubble sort algorithm */
+	
+		for (c = 0 ; c < ( n - 1 ); c++)
+  	
+			{
+  	  
+			for (d = 0 ; d < n - c - 1; d++)
+  	  
+			{
+  	    
+		if (tab[d] > tab[d+1]) 
+/* For decreasing order use < */
+  	    
+			{
+  	      
+			swap = tab[d];
+  	      
+			tab[d] = tab[d+1];
+  	      
+			tab[d+1] = swap;
+  	    
+			}
+
+  	 	 }
+  	
+	}
+	
+	sum = 0;
+	
+	for(i = 0; i < tab_size; i++){
+		
+	sum += tab[i];
+	
+	}
+	
+	return sum; 
+
+}
+/*Lib1.h file*/
+#ifndef LIB1_H
+
+#define LIB1_H
+	
+
+double tab_sort_sum(double *tab, int tab_size);
+
+#endif
+
+/* makefile: */
+all: 
+Program
+
+%.o: %.c lib1.h
+	
+gcc -c $< -o $@
+
+Program: main.o lib1.o
+	
+gcc main.o lib1.o -o Program
+
+TestProgram: main.c lib1.c
+	
+gcc main.c lib1.c -o TestProgram
+
+main.o: main.c
+	
+gcc -c main.c
+
+lib1.o: lib1.c
+	
+gcc -c lib1.c
+
+clean:
+ rm -rf *o Program 
+
