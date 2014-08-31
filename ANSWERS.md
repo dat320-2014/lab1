@@ -95,53 +95,122 @@ Use `ls -l` to check that the permissions have changed.
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *:w*
 1. What command/key is used to start entering text?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *i*
 1. What are the different modes the editor can be in?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *insert and command*
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *$ 4*
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *delete the line where the cursor is*
 1. How do you undo the most recent changes?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *u*
 1. How do you move back one word?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *b*
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *gcc -O -c hello.c , the hello.o file contains the objects generated from the hello.c file, hello.o cannot be run.*
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *gcc -g hello.c*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *In listing 2 the debug option is decided by the compiler, in listing 3 whether to debug is decided in the program*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *gcc hello.c -Wl,map=hello.map , -Wl is responsible*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Its a list of all the differen resources a program uses in order to run*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *#define int=1 , #define string=string*
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *double movsd Moves a scalar double-precision floating-point value , float movss  Moves a scalar single-precision floating-point value*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *it checks the timestamps of the source and object files*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *make -f MyMakefile*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *#ifndef #define in the file with the guarded definition,  It is needed in order to prevent definition of the same element two times and causing copilation errors*
 
 ##Library Task
 
 Insert your code between the brackets `{}`:
 
-    void main( int argc, char *argv[] )
+-------------------------------------------------
+main.c
+    #include <stdlib.h>
+    #include <l1.h>
+
+
+     void main( int argc, char *argv[] )
 	{
-    }
-    
-	double tab_sort_sum( double *tab, int tab_size )
+
+	double table [ argv[0] ];
+
+	double min;
+	double max;
+	double result=0,low_num=0,hi_num=0;
+
+	if (min==null){min = 0.0} 
+	if (max==null){max = 100.0}
+	
+	if(min<max)
 	{
+                low_num=min;
+                hi_num=max+1; 
+            }else{
+                low_num=max+1;
+                hi_num=min;
+            }
+
+	for ( i = 0; i < argv[0]; i++ )
+   		{
+            
+            srand(time(NULL));
+            result = (rand()%(hi_num-low_num))+low_num;
+            
+     		 table[ i ] = result;
+  	 	}
+
+
+	tab_sort_sum(table,argv[0]);
+
+	printf(table); 
+
+	}
+    	
+----------------------------------------
+l1.c
+
+	#include <stdlib.h>
+
+	double tab_sort_sum( double *table, int tab_size )
+
+	int compare (const void * a, const void * b)
+	{
+ 	 return ( *(int*)a - *(int*)b );
 	}
 
+	{
+	doubble sum =table[0];
+		for ( i = 1; i < tab_size; i++ ){
+			sum+=table[i];
+		}
+	
+	qsort (table, tab_size, sizeof(int), compare);
 
+	return sum;
+	
+	return table
+	
+	}
+
+--------------------------------
+L1.h
+	#ifndef L1.h
+	#define L1.h
+
+	double tab_sort_sum( double *tab, int tab_size )
+
+	#endif
+-----------------------
