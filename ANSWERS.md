@@ -143,9 +143,34 @@ Use `ls -l` to check that the permissions have changed.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *`gcc -Xlinker -Map=hello.map -o hello.c` This command produces both the map and the executable. The linker (ld) is responsible for creating the map file.*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *The map file shows us where the object files are mapped in memory, all the archive members included in the link. And values assigned to symbols.*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:**
+```c
+#include <stdio.h>
+
+float multiply(float x1, float x2);
+
+
+char s[] = "Hello World!";	// in .data
+
+static int i;			// in .bss
+
+const unsigned int lol = 14;	// in .rodata
+
+int main(void) {
+	#ifdef DEBUG
+		printf("Debugging\n");
+	#endif
+	printf("Hello, world!\n");
+	return 0;
+}
+
+float multiply(float x1, float x2) {
+	return x1 * x2;
+}
+
+``` 
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:**
 ```asm
