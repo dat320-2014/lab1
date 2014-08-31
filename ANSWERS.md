@@ -66,7 +66,7 @@ Use `ls -l` to check that the permissions have changed.
 1. What option with the command `rm` is required to remove a directory?
   - **Answer:** *-r (recursive) removes a directory and all its content. ex: $rm -r foobar*
 1. What is the command used to display the manual pages for any command?
-  - **Answer:** *$man [commandName] -> ex: man cat*
+  - **Answer:** *$man [commandName] -> ex: $man cat*
 1. What command will show the first 5 lines of an input file?
   - **Answer:** *$head -5 [fileName]*
 1. What command can be used to rename a file?
