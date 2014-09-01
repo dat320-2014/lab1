@@ -162,7 +162,7 @@ Use `ls -l` to check that the permissions have changed.
 ##Library Task
 
 Insert your code between the brackets `{}`:
-`
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -222,4 +222,4 @@ double tab_sort_sum( double *tab, int tableSize)
 		sum=sum+tab[i];
 	return sum;
 }
-`
+```
