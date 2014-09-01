@@ -15,6 +15,6 @@ void main( int argc, char *argv[] )
 		printf("%.2f\n", table[i]);
 	}
 	double sum = tab_sort_sum(table, antall);
-	printf("Sum is %1f\n", sum);
+	printf("Sum is %.2f\n", sum);
 }
 
