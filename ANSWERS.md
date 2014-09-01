@@ -126,7 +126,22 @@ Use `ls -l` to check that the permissions have changed.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *YOUR ANSWER HERE*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 
+#include <stdio.h>
+
+int main(void)
+{
+        printf("Hello world!\n");
+        int myvall1=1;
+        int myvall2=0;
+        const int myvall3 =3;
+
+
+
+
+        return 0;
+}
+
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *YOUR ANSWER HERE*
 1. How does `make` know if a file must be recompiled?
