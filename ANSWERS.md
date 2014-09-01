@@ -117,11 +117,12 @@ Use `ls -l` to check that the permissions have changed.
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
   - **Answer:** If we want gcc to only produce an .o file . We add the flag -c in the command. The command  ` gcc -o nyaste.o -c ny.c` will yield a new .o file, nyaste.o, from the .c file ny.c  .    A .o file only containes object code, we could think of this as follows. The complete .exe program is when all .o files have been linked, this is the final stage before the program is ready for use. o.file can be code modules that we have made, that togheter make up the final program. Libraries also come in .o files. 
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** When compiling the code from listing 2 we use the command `gcc eskimo.c -D DEBUG -o eskimo.exe` This command will define the DEBUG macro in the code, this will inturn activate the code defined. If we compiled it whitout the `-D DEBUG` command, the debug code will be disabled.  In listing 3, the debug code is allways going to be part of the end product. The debug code is only activated when the condtions are meet at runtime.
+
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** The advantage with the approach used in listing 2 is that one can decide wheter to compile the progam with or without the debug code. This will save memory and might also be quicker to compile. In listing 3 the code is allways going to be present. The disatvantage is that one has to remove the code before compilation to deactivate debugging. 
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `gcc hello.c -o hello.exe -Wl,-Map=mymap.txt`  It's the `-Wl,-Map=mymap.txt`
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *YOUR ANSWER HERE*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
