@@ -138,9 +138,17 @@ Use `ls -l` to check that the permissions have changed.
 1. How does `make` know if a file must be recompiled?
   - **Answer:** The source file is newer than the compiled file
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** make -f mymakefile
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:**  an #include guard is a particular construct used to avoid the problem of double inclusion
+  - #ifndef GRANDFATHER_H
+#define GRANDFATHER_H
+ 
+struct foo {
+    int member;
+};
+ 
+#endif /* GRANDFATHER_H */
 
 ##Library Task
 
