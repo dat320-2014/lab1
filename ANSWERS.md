@@ -139,30 +139,87 @@ Use `ls -l` to check that the permissions have changed.
     * Cons
       * Increases file-size whether the debug code is used or not.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 'gcc filename.c -Wl,-Map=mapname.map' - The gcc *Linker* is responsible for producing the *map* file.
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *.data* contains initialized variables, *.rodata* contains constants and *.bss* uninitialized variables
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 'int a = 0;', 'int b = 2;', 'const int c = 3;' 
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 'movsd/mulsd' is used for 64-bit doubles, and 'movss/mulss' for 32-bit floats.
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** By checking the timestamp for last modification.
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 'make -f mymakefile'
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 
+    '#ifndef TEST_H'
+    '#define TEST_H % 
+    // CODE GOES HERE
+    '#endif'
+
+     *Include guards prevent the compiler from seeing the same content again (multiple inclusion) in the same translation unit*
 
 ##Library Task
 
 Insert your code between the brackets `{}`:
+`
+#include <stdio.h>
+#include <stdlib.h>
 
-    void main( int argc, char *argv[] )
-	{
+double tab_sort_sum( double *tab, int tableSize);
+
+int main(int argc, char *argv[])
+{
+    double min = 0;
+    double max = 100;
+    int tableSize;
+
+    if (argc < 2) {
+        return 0;
     }
-    
-	double tab_sort_sum( double *tab, int tab_size )
-	{
-	}
+
+    sscanf(argv[1], "%d", &tableSize);
+
+    if (argc > 2) {
+        sscanf(argv[2], "%d", &min);
+    }
+
+    if (argc > 3) {
+        sscanf(argv[3], "%d", &max);
+    }
+    int i;
+    double tab[tableSize];
+
+    for ( i = 0; i < tableSize; i++ ) {
+    tab[i] = min + (rand() % (int)(max - min + 1));
+    }
+
+    double sum = tab_sort_sum(tab, tableSize);
+
+    printf("Sum: %.4f\n", sum); 
+
+    for (i = 0; i < tableSize; i++) {
+        printf("%f\n", tab[i]);
+    }
+}
+
+int compareDouble( const void* item1, const void* item2 )
+{
+	if ( *(double*)item1 < *(double*)item2 ) return -1;
+	if ( *(double*)item1 == *(double*)item2 ) return 0;
+	if ( *(double*)item1 > *(double*)item2 ) return 1;
+}
 
 
+double tab_sort_sum( double *tab, int tableSize)
+{
+	int i;
+	double sum = 0;
+
+	qsort (tab, tableSize, sizeof(double), compareDouble);
+
+	for(i=0;i<tableSize;i++)
+		sum=sum+tab[i];
+	return sum;
+}
+`
