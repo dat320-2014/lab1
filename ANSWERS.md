@@ -136,7 +136,7 @@ Use `ls -l` to check that the permissions have changed.
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** mulsd and mulss, double og single precision multiplication, mulsd er 64bit og mulss er 32bit.
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** The source file is newer than the compiled file
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** *YOUR ANSWER HERE*
 1. How do you implement an *include guard*, and why is it needed?
