@@ -145,25 +145,36 @@ drwxr-xr-x 3 ragnvald ragnvald 4096 Aug 27 15:23 ..
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Use -c. This will combile and assemble, but not link the object file into an executable*
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *Enabling debug in the first file is done by passing -DDEBUG to command line. In the second example it's enabled by setting debug to 1 at runtime.*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *First method will not include debug code in the resulting executable unless explicitly enabled, which will lead to a smaller and more efficient binary. The second method will include debug code, but it does not need to ever run. Enabling the code can be done at runtime if neccessary.*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *-Wl,-Map=out.map : ld is responsible for producing it.*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *.rodata=constants : .bss=uninitialized and zero-initialized variables : .data=Initialized variables*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:**
+```
+#include <stdio.h>
+const int one = 1;
+int two = 2;
+int zero = 0;
+int uninitialized;
+int main(void) {
+        printf("Hello, world! %d %d %d %d\n",zero,uninitialized,one,two);
+        return 0;
+}
+``` 
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *movq, movss,mulss,movl is used in float example. movq,movsd,mulsd is used in double example. Instead of using rax for result, eax is used in float example. pushq is used to start multiply routine, and popq to return*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *It keeps track of which files have changed since last compile, and recompiles only what is neccessary*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *make -f mymakefile*
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** *#ifdef, #define, #endif preprocessing constructs in headers can act as an include guard. It's needed to prevent files from being included more than once*
 
 ##Library Task
 
