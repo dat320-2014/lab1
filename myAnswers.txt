@@ -1,0 +1,81 @@
+1. What option with the command "rm" is required to remove a directory? 
+     it has to be empty
+
+2. What is the command used to display the manual pages for any command? 
+     man command
+
+3. What command will show the first 5 lines of an input file? 
+     head -5 filename
+
+4. What command can be used to rename a file? 
+     mv currentfilename newfilename
+
+5. What option can we given to "ls" to show the hidden files? 
+    ls -a
+
+6. What will the command "cat -n file" do?
+     displays content inside the -n file (??)
+
+7. What will the command "echo -n hello" do?
+     it adds "hello" to the start of your username, so when you write next time it says HelloUsername@computername:
+
+8. What command will display list of the users who currently logged in in the system?
+     who
+
+9. How do you change password on your account?
+	 passwd enter oldpassword enter newpassword enter newpassword enter (enter = enterbutton)
+
+10. How can you list a file in reverse order?
+	 ls -r
+
+11. What does the "less" command do?
+     writes out content of a file one page at a time
+
+12. With "less" how do you navigate? 
+    space bar for another page and q for quit
+
+13. What command will display the running processes of the current user? 
+	 ps
+
+14. What command can be used to end the process(es) consuming the most CPU?
+	 sleep 100 + C (control c), kill PID_number
+--------------------------------------------------------------------------------------------
+1. How do we save a file in vi and continue working?
+	:w filename
+2. What command/key is used to start entering text?
+	"i"for insert, escape for going back to command
+
+3. What are the different modes the editor can be in?
+	insert and command
+
+4. What command can be used to place the cursor at the beginning of line 4?
+	:# 4 #
+
+5. What will dd command do (in command-mode)?
+	deletes the line that the cursor is on
+
+6. How do you undo the most recent changes?
+	"u" for undo
+
+7. How do you move back one word?	 
+	"b" 
+--------------------------------------------------------------------------------------------
+
+1. a) How do you use gcc to only produce the .o file?
+	using -c flag like -c hello.c (??)
+1. b) What is the difference between generating only the .o file, and building the hello executable done in the previous compilation above?
+	When you do it like in the lab, you get two files one named hello.c and another named hello*(??)
+2.
+
+I cant seem to find answers on the rest of the lab and i have struggled with the tasks above, and i wont get to finish this here and now
+I cant seem to find what to do in the labs, telling me what to do but not knowing what and where i can find out how to do it, is very hard. 
+
+
+
+
+
+
+
+	 
+	 
+	 
