@@ -1,8 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "l1.h"
-double tab_sort_sum(double *, int);
-
+#include <time.h>
 
 void main( int argc, char *argv[] )
 {
@@ -10,6 +8,7 @@ void main( int argc, char *argv[] )
 	sscanf(argv[1], "%d", &antall);
 	double table[antall];
 	int i;
+	srand(time(NULL));
 	for (i = 0; i < antall; i++) 
 	{
 		table[i] = rand() % 100 + 1;
