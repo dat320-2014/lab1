@@ -119,13 +119,20 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** CASE 1: gcc -D DEBUG hello.c -o hello
   - 		CASE 2: You have to change the variable debug to 1 before compiling.
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** Listing 2 only generates debug code if you compile it with -D DEBUG flag. Listing 3 always has the debug code and you can activate it any time (for example in runtime) by changing the variable.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** gcc hello.c -o hello -Wl,-Map=mapfile.map
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** A link map provides information about the link, including the following:
+       ·   Where object files are mapped into memory.
+       ·   How common symbols are allocated.
+       ·   All archive members included in the link, with a mention of the symbol which caused the archive member to be 	   brought in.
+       ·   The values assigned to symbols.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** 
+  - 	int i;
+	int debug = 51;
+	const int p = 32;
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *YOUR ANSWER HERE*
 1. How does `make` know if a file must be recompiled?
