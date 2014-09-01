@@ -137,33 +137,26 @@ Use `ls -l` to check that the permissions have changed.
 
 Insert your code between the brackets `{}`:
 
-    void main( int argc, char *argv[] )
-{
-    int antall;
-    sscanf(argv[1], "%d", &antall);
-    double table[antall];
-    int i;
-    for (i = 0; i < antall; i++)
-    {
-        table[i] = rand() % 100 + 1;
-        printf("%.2f\n", table[i]);
-    }
-    double sum = tab_sort_sum(table, antall);
-    printf("Sum is %1f\n", sum);        
-}
+    void main( int argc, char *argv[] ){
+            int i;
+            double tab[TAB_SIZE] = {4.3, 2.3, 6.4, 1.2, 1.3};
+            double sum;
 
-double tab_sort_sum( double *tab, int tab_size )
-{
-    qsort(tab, tab_size, sizeof(double), comp);
-    double sum;
-    int i;
-    printf("sorted:\n");
-    for (i = 0; i < tab_size; i++)
-    {
-        printf("%.2f\n", tab[i]);
-        sum += tab[i];
+            sum = tab_sort_sum( tab, TAB_SIZE );
+
+            printf("sum=%f\n", sum);
+            for ( i=0; i<TAB_SIZE;i++)
+                    printf("tab[%d]=%f\n", i, tab[i]);
     }
-    return sum;
-}
+
+    double tab_sort_sum ( double* tab, int TAB_SIZE ) {
+            int i;
+            double sum=0;
+            qsort (tab, TAB_SIZE, sizeof(double), dblClmp);
+            for(i=0;i<tab_size;i++)
+                    sum = sum + tab[i];
+            return sum;
+    }
+
 
 
