@@ -141,14 +141,12 @@ Use `ls -l` to check that the permissions have changed.
   - **Answer:** make -f mymakefile
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:**  an #include guard is a particular construct used to avoid the problem of double inclusion
-  - #ifndef GRANDFATHER_H
-#define GRANDFATHER_H
- 
-struct foo {
-    int member;
-};
- 
-#endif /* GRANDFATHER_H */
+  - 	#ifndef GRANDFATHER_H
+	#define GRANDFATHER_H
+	struct foo {
+    		int member;
+	};
+	#endif /* GRANDFATHER_H */
 
 ##Library Task
 
