@@ -153,11 +153,69 @@ Use `ls -l` to check that the permissions have changed.
 Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
-	{
+    {
+	//Make a table of size give by an argument on the command line.
+	int tableSize;
+	if (argc > 1){
+		tableSize = atoi(argv[1]);
+	} else {
+		printf("Error, no Array Size\n");
+	}
+	//Fill the table with random numbers between MIN and MAX
+	//MIN = 0.0 if not specified with another value on command line, i.e. optional argument
+	//MAX = 100.0 if not specified with another value on command line, i.e. optional argument
+	double MIN = 0;
+	double MAX = 100;
+	if (argc == 3){
+		MIN = atof(argv[2]);
+	}
+	if (argc == 4){
+		MIN = atof(argv[2]);
+		MAX = atof(argv[3]);
+	}
+
+	srand(time(NULL));
+
+	int i;
+	double table[tableSize];
+	for (i = 0; i < tableSize; i++){
+		double range = (MAX - MIN); 
+    	double div = RAND_MAX / range;
+    	double randNum = MIN + (rand() / div);
+		table[i] = randNum;
+	}
+
+	for (i = 0; i < tableSize; i++){
+		printf("%.2f\n", table[i]);
+	}
+
+
+	//Call tab_sort_sum() in lib1
+	double sum = tab_sort_sum(table, tableSize);
+	//Print out table and sum
+	printf("Sum: %.2f\n", sum);
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
+		double sum = 0;
+	int i;
+
+	qsort(tab, tab_size, sizeof(*tab), compare);
+
+	for (i = 0; i < tab_size; i++){
+		sum += tab[i];
 	}
+
+	return sum;
+    }
+    
+    int compare (const void *a, const void *b)
+    {
+	const int *ia = (const int *)a; // casting pointer types 
+	const int *ib = (const int *)b;
+	return *ia  - *ib; 
+    }
+    
 
 
