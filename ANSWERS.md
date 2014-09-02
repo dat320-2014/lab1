@@ -164,7 +164,7 @@ Use `ls -l` to check that the permissions have changed.
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
   - **Answer:** * `make -f mymakefile` *
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** * `#include file.h` used to avoid the problem of double inclusion when dealing with the include directive.*
+  - **Answer:** * `#include file.h`  used to avoid the problem of double inclusion when dealing with the include directive. *
 
 ##Library Task
 
