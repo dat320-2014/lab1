@@ -113,7 +113,7 @@ chmod go-rwx backups, chmod a+rw science.txt
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
   - gcc -c hello.c -o hello.o, you dont specify the exe filename and hello.o isnt runnable
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - gcc hello.c -D DEBUG hello -o
+  - gcc hello.c -D DEBUG hello -o (debug on) gcc hello.c hello -o (debug off).  
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
