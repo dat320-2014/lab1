@@ -119,11 +119,13 @@ chmod go-rwx backups, chmod a+rw science.txt
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - gcc hello.c -o hello -Wl,-Map=output.map, linkeren 
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - initialized (int somthing set to somthing that is not 0) plomme
+  - uninitialized (int somthing set to 0) eple
+  - read only (int const) appelsin
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - int eple =0;(.bss) int plomme = 1;(.data) const int appelsin = 2;(.rodata)
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - (gcc hello.c -S -o hello.assembly)  
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
