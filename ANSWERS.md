@@ -117,7 +117,7 @@ chmod go-rwx backups, chmod a+rw science.txt
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - the first one you can run just by taking in the -D DEBUG false or true when you compile, the other one is a little more work since you need to change int debug which is inside the c file. 
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - gcc hello.c -o hello -Wl,-Map=output.map, linkeren 
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** *YOUR ANSWER HERE*
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
