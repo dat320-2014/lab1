@@ -126,7 +126,7 @@ chmod go-rwx backups, chmod a+rw science.txt
   - int eple =0;(.bss) int plomme = 1;(.data) const int appelsin = 2;(.rodata)
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - (gcc hello.c -S -o hello.assembly)  
-  - assembly for float: movss and mulss, for double movsd and mulsd
+  - assembly for float: movss and mulss, for double movsd and mulsd, they have different type of ssembly but the start of the assembly are thesame (mov x3 and mul x1)
 1. How does `make` know if a file must be recompiled?
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
