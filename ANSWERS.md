@@ -103,30 +103,30 @@ Use `ls -l` to check that the permissions have changed.
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** w 
+  - **Answer:** `w` 
 1. What command/key is used to start entering text?
-  - **Answer:** i 
+  - **Answer:** `i` 
 1. What are the different modes the editor can be in?
-  - **Answer:** insert, command 
+  - **Answer:** insert, command
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** :4 or :set 4
+  - **Answer:** `:4` or `:set 4`
 1. What will `dd` command do (in command-mode)?
   - **Answer:** deletes the whole line at the cursor 
 1. How do you undo the most recent changes?
-  - **Answer:** u 
+  - **Answer:** `u` 
 1. How do you move back one word?
-  - **Answer:** b 
+  - **Answer:** `b` 
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *'gcc -c hello.c -o hello.o' ,the compiler creates an object file for each source file, before linking them together, into the final executable*
+  - **Answer:** `gcc -c hello.c -o hello.o` ,the compiler creates an object file for each source file, before linking them together, into the final executable
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** *YOUR ANSWER HERE*
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
   - **Answer:** *YOUR ANSWER HERE*
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *'gcc file.c -Wl,-Map file.map', map link*
+  - **Answer:** `gcc file.c -Wl,-Map file.map`, map link
 1. What is the content of each of the sections in a *map* file. Explain briefly.
   - **Answer:** **
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
@@ -134,11 +134,11 @@ Use `ls -l` to check that the permissions have changed.
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
   - **Answer:** *YOUR ANSWER HERE*
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *It uses the makefile data base and the last-modification times of the files to determine if it needs to be recompiled*
+  - **Answer:** It uses the makefile data base and the last-modification times of the files to determine if it needs to be recompiled
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *make -f mymakefile*
+  - **Answer:** `make -f mymakefile`
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *#ifndef, used to avoid double inclusions*
+  - **Answer:** `#ifndef`, used to avoid double inclusions
 
 ##Library Task
 
