@@ -115,7 +115,7 @@ chmod go-rwx backups, chmod a+rw science.txt
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - gcc hello.c -D DEBUG hello -o (debug on) gcc hello.c hello -o (debug off).  For the other one we can change it off by setting int debug = 0; and take debug on by typing in 1 instead of 0 and compile and runt the program.
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - the first one you can run just by taking in the -D DEBUG false or true when you compile, the other one is a little more work since you need to change int debug which is inside the c file. 
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
   - **Answer:** *YOUR ANSWER HERE*
 1. What is the content of each of the sections in a *map* file. Explain briefly.
