@@ -115,7 +115,7 @@ Use `ls -l` to check that the permissions have changed.
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** If we want gcc to only produce an .o file . We add the flag -c in the command. The command  ` gcc -o nyaste.o -c ny.c` will yield a new .o file, nyaste.o, from the .c file ny.c  .    A .o file only containes object code, we could think of this as follows. The complete .exe program is when all .o files have been linked, this is the final stage before the program is ready for use. o.file can be code modules that we have made, that togheter make up the final program. Libraries also come in .o files. 
+  - **Answer:** If we want gcc to only produce an .o file . We add the flag   in the command. The command  ` gcc -o nyaste.o -c ny.c` will yield a new .o file, nyaste.o, from the .c file ny.c  .    A .o file only containes object code, we could think of this as follows. The complete .exe program is when all .o files have been linked, this is the final stage before the program is ready for use. o.file can be code modules that we have made, that togheter make up the final program. Libraries also come in .o files. 
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
   - **Answer:** When compiling the code from listing 2 we use the command `gcc eskimo.c -D DEBUG -o eskimo.exe` This command will define the DEBUG macro in the code, this will inturn activate the code defined. If we compiled it whitout the `-D DEBUG` command, the debug code will be disabled.  In listing 3, the debug code is allways going to be part of the end product. The debug code is only activated when the condtions are meet at runtime.
 
@@ -143,11 +143,11 @@ int main(void)
 }
 
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** The assembly instruction used to multiply 2 float numbers is `mulss` and for double, it is `mulsd.
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** Make checks is the source files are newer then the previous compiled file.
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - **Answer:** `make -f mymakefile`
 1. How do you implement an *include guard*, and why is it needed?
   - **Answer:** *YOUR ANSWER HERE*
 
