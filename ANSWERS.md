@@ -169,50 +169,65 @@ Here, the 1st. inclusion of "grandfather.h" causes the macro GRANDFATHER_H to be
 
 Insert your code between the brackets `{}`:
 
-    void main( int argc, char *argv[] )
-	{
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h>
+    #include "l1.h"
+
+    void main(int argc, char *argv[]) {
 		//Make a table of size given by an argument on the command line.
-	int listSize;
-       	sscanf(argv[1], "%d", &listSize);
-	int list[listSize];
-	printf("listSize: %d\n", listSize);
-
-	//MIN = 0.0 if not specified with another value in command line, i.e optional argument
-	int MIN = 0;
-	if(argc > 2) sscanf(argv[2], "%d", &MIN);
-	printf("MIN: %d\n", MIN);
-
-	//MAX = 100.0 if not specified with another value on command line, i.e optional argument
-	int MAX = 100;
-	if(argc > 3) sscanf(argv[3], "%d", &MAX);
-	printf("MAX: %d\n", MAX);
-
-	//Fill the table with random numbers between MIN and MAX.
-	int i = 0;
-	for(i = 0; i < listSize; i++) {
-		list[i] = rand() %(MAX -  MIN + 1);
-		printf("list: %d\n", list[i]);
-	}
-
-	//Call tab_sort_sum() in lib1
-	double sum = table_sort_sum(list, listSize);
-	printf("Sum: %.2f\n", sum);
-
-	//Print out table and sum.
-    }
-    
-	double tab_sort_sum( double *tab, int tab_size )
-	{
+		int listSize;
+			sscanf(argv[1], "%d", &listSize);
+		double list[listSize];
+		printf("listSize: %d\n", listSize);
 	
-	// Sort the table, return the sum and the sorted table.
-    qsort(tab, tab_size, sizeof(double), sort);
-	double sum;
-	int i;
-	for(i = 0; i < tab_size; i++) {
-		double tableValue = tab[i];
-		printf("%.2d\n", tableValue);
-		sum += tableValue;
-	}
-	}
+		//MIN = 0.0 if not specified with another value in command line, i.e optional argument
+		int MIN = 0;
+		if(argc > 2) sscanf(argv[2], "%d", &MIN);
+		printf("MIN: %d\n", MIN);
 
+		//MAX = 100.0 if not specified with another value on command line, i.e optional argument
+		int MAX = 100;
+		if(argc > 3) sscanf(argv[3], "%d", &MAX);
+		printf("MAX: %d\n", MAX);
 
+		//Fill the table with random numbers between MIN and MAX.	
+		srand(time(NULL));
+		int i = 0;
+		for(i = 0; i < listSize; i++) {
+			list[i] = (((float)rand() / RAND_MAX) * (MAX-MIN))+MIN;
+			printf("list:%d \t  %f\n",i, list[i]);
+		}
+
+		//Call tab_sort_sum() in lib1
+		double sum = tab_sort_sum(list, listSize);
+		printf("Sum: %f\n", sum);
+
+		//Print out table and sum.
+    }
+
+    #include <stdio.h>
+    #include <stdlib.h>
+
+    int sort(const void * aa, const void * bb) {
+		double a = *((double*)aa);
+		double b = *((double*)bb);
+		if(a <b) return -1;
+		if(a == b) return 0;
+		if(a > b) return 1;
+    } 
+
+    double tab_sort_sum(double *tab, int tab_size) {
+
+		// Sort the table, return the sum and the sorted table.
+		qsort(tab, tab_size, sizeof(double), sort);
+		printf("Sorted\n");
+		double sum;
+		int i;
+		for(i = 0; i < tab_size; i++) {
+			double tableValue = tab[i];
+			printf("%f\n", tableValue);
+			sum += tableValue;
+		}
+		return sum;
+    }
