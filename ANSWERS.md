@@ -19,7 +19,7 @@ Please use [markdown](https://help.github.com/articles/markdown-basics) formatin
 
 Make another directory inside the `unixstuff` directory called `backups`
 
-**Answer:** *YOUR ANSWER HERE*
+~/unixstuff$ mkdir backups
 
 ###Exercise 1b
 
@@ -29,7 +29,7 @@ Use the commands `cd`, `ls` and `pwd` to explore the file system.
 
 **Answer:** *YOUR ANSWER HERE*
 
-###Exercise 2a
+###Exerci 2a
 
 Create a backup of your `science.txt` file by copying it to a file called `science.bak`
 
