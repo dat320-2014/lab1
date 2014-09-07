@@ -95,42 +95,47 @@ chmod a+rw science.txt chmod go-rwx backups ls -1
 
 ##vi questions
 1. How do we save a file in `vi` and continue working?
-  - **Answer:** *YOUR ANSWER HERE*
+  - :w
 1. What command/key is used to start entering text?
-  - **Answer:** *YOUR ANSWER HERE*
+  - while in COMMANDO mode press the "i" key, then you can start type text.
 1. What are the different modes the editor can be in?
-  - **Answer:** *YOUR ANSWER HERE*
+  - COMMANDO/INSERT mode
 1. What command can be used to place the cursor at the beginning of line 4?
-  - **Answer:** *YOUR ANSWER HERE*
+  - ^ Commando, would end up in the beginning of the current line
 1. What will `dd` command do (in command-mode)?
-  - **Answer:** *YOUR ANSWER HERE*
+  - It deletes the whole line that the cursor is at
 1. How do you undo the most recent changes?
-  - **Answer:** *YOUR ANSWER HERE*
+  - u COMMANDO
 1. How do you move back one word?
-  - **Answer:** *YOUR ANSWER HERE*
+  - b
 
 ##The C Language and Make tool Questions
 
 1. How do you use `gcc` to only produce the `.o` file?  What is the difference between generating only the `.o` file, and building the `hello` executable done in the previous compilation above?
-  - **Answer:** *YOUR ANSWER HERE*
+  - gcc[sourcefile] -c, an example is to make a library, the object file is not linked.
 1. Give the command for compiling with `debug` enabled instead of normal compilation for the two examples shown in Listing 2 and Listing 3. Explain how to turn debugging on/off for the two cases.
-  - **Answer:** *YOUR ANSWER HERE*
+  - Listing 2: gcc -DDEBUG. Listing 3: Global var debug must be changed in source in order to toggle.
 1. Give a brief pros and cons discussion for the two methods to add debug code shown in Listing 2 and Listing 3.
-  - **Answer:** *YOUR ANSWER HERE*
+  - Listing 2: There you have to change it before is starts to compile, Listing 3: Here you can change it while debugging.
 1. Provide the command for generating the *map* file. Which of the `gcc` tools is responsible for producing a *map* file?
-  - **Answer:** *YOUR ANSWER HERE*
+  - gcc helloworld.c -WI,-Map=mappy.map, linkeren
 1. What is the content of each of the sections in a *map* file. Explain briefly.
-  - **Answer:** *YOUR ANSWER HERE*
+  - The map shows address resolutions, .data, .code, etc sections size and position, archive members included and allocated symbols and their assigned value.
 1. Rewrite `hello.c` to produce entries in the *map* file for `.data`, `.bss`, and `.rodata`. Hint: This can be done by adding one variable for each type to the file.
-  - **Answer:** *YOUR ANSWER HERE*
+  - 
 1. Add the following function to `hello.c`: `double multiply(double x1, double x2)`, which returns `x1*x2`. Use `gcc` to generate an assembly code listing for the program, and examine the assembly code. What assembly instructions are used to do this? Repeat this task, but now replace `double` with `float`. Explain!
-  - **Answer:** *YOUR ANSWER HERE*
+  - gcc -o -s dmult.c (took the liberty of optimizing) Examining dmult.s & fmult.s: mulsd %xmm1, %xmm0 scalar double as opposed to mulss %xmm1, %xmm0 scalar single mult. instruction. Single (float) operates on half the bit-size of double. It is thus curious how gcc chooses to use the 128bit XMM registers on both accounts.
 1. How does `make` know if a file must be recompiled?
-  - **Answer:** *YOUR ANSWER HERE*
+  - The source file is "newer" than the currently compiled file, or the file does not exist.
 1. Provide a `make` command to use a file named `mymakefile` instead of the default `makefile`.
-  - **Answer:** *YOUR ANSWER HERE*
+  - make -f mymakefile
 1. How do you implement an *include guard*, and why is it needed?
-  - **Answer:** *YOUR ANSWER HERE*
+  - include guards prevent common libraries and headers being imported several times. It looks like this:
+#ifndef IHAVEBEENHERE
+#DEFINE IHAVEBEENHERE
+ //do the header
+#endif
+
 
 ##Library Task
 
