@@ -141,13 +141,24 @@ chmod a+rw science.txt chmod go-rwx backups ls -1
 
 Insert your code between the brackets `{}`:
 
+//This task is unfinished
+##include <stdlib.h>
+
     void main( int argc, char *argv[] )
 	{
-		uint8_t debug = 0;
+		
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
 	{
+		qsort(tab, tab_size, sizeof(*tab), cmp );
+		double sum = 0;
+		int i;
+		for (i = 0; i >= 0; i--)
+		{
+			sum += tab[i]
+		}
+		return sum;
 	}
 
 

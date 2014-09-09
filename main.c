@@ -42,7 +42,7 @@ void main(int argc, char *argv[])
 	{
 		printf( "table size: %i\nminimum:	%.2f\nrange:	%.2f", size, min, range);
 	}
-	srand( time( NULL )); // seed random generator
+	srand( time( NULL ));
 	for ( i = size; i >= 0; i-- )
 	{
 		table[i] = min + ((double) rand()) / div;
