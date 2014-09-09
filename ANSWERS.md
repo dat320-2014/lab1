@@ -143,6 +143,7 @@ Insert your code between the brackets `{}`:
 
     void main( int argc, char *argv[] )
 	{
+		uint8_t debug = 0;
     }
     
 	double tab_sort_sum( double *tab, int tab_size )
