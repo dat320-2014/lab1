@@ -141,7 +141,6 @@ chmod a+rw science.txt chmod go-rwx backups ls -1
 
 Insert your code between the brackets `{}`:
 
-#include <stdlib.h>
 
     void main(int argc, char *argv[]) //This task is unfinished
     	{
